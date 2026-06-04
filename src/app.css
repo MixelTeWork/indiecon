@@ -1,0 +1,105 @@
+:root {
+	--color-blue: #002ff7;
+	--color-orange: #ffa600;
+	--color-red-light: #ff3f25;
+	--color-red-dark: #d73004;
+	--color-black: #020202;
+	--color-white: #ffffff;
+}
+
+:root {
+	--theme-main-bg: var(--color-white);
+	--theme-main-text: var(--color-black);
+
+	--theme-accent-bg: var(--color-orange);
+	--theme-accent-text: var(--color-white);
+
+	--theme-secondary-bg: var(--color-black);
+	--theme-secondary-text: var(--color-white);
+
+	--theme-transition: background-color 0.3s, color 0.15s;
+}
+
+.dark {
+	--theme-main-bg: var(--color-black);
+	--theme-main-text: var(--color-white);
+
+	--theme-accent-bg: var(--color-blue);
+	--theme-accent-text: var(--color-white);
+
+	--theme-secondary-bg: var(--color-white);
+	--theme-secondary-text: var(--color-black);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+	color: inherit;
+	border: none;
+	background: transparent;
+}
+
+html,
+body {
+	min-height: 100%;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: var(--theme-main-text);
+	background-color: var(--theme-main-bg);
+	transition: var(--theme-transition);
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	font-size: clamp(0.875rem, 0.8rem + 0.37vw, 1.04rem);
+	line-height: 1.2;
+}
+
+.h1 {
+	font-size: clamp(2.5rem, 1.25rem + 6.25vw, 7.175rem);
+}
+
+.h2 {
+	font-size: clamp(2.18rem, 1.4rem + 3.9vw, 4.53rem);
+	font-weight: 900;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
+}

@@ -1,0 +1,78 @@
+<script lang="ts">
+	/* eslint-disable svelte/no-navigation-without-resolve */
+	import back from "./back.svg";
+	import back2 from "./back2.svg";
+	import arrow from "./arrow.svg";
+	import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
+
+	const {
+		children,
+		small,
+		arrow: addArrow = false,
+		href,
+		...props
+	}: HTMLButtonAttributes &
+		HTMLAnchorAttributes & {
+			small?: boolean;
+			arrow?: boolean;
+		} = $props();
+
+	const backUrl = $derived(`url("${small ? back2 : back}")`);
+</script>
+
+{#if href}
+	<a
+		{href}
+		{...props}
+		style:--back={backUrl}
+		class={["btn", addArrow && "btn_arrow", small && "btn_small"]}
+	>
+		{@render children?.()}
+		{#if addArrow}
+			<img src={arrow} alt="arrow" class="arrow" />
+		{/if}
+	</a>
+{:else}
+	<button
+		{...props}
+		style:--back={backUrl}
+		class={["btn", addArrow && "btn_arrow", small && "btn_small"]}
+	>
+		{@render children?.()}
+		{#if addArrow}
+			<img src={arrow} alt="arrow" class="arrow" />
+		{/if}
+	</button>
+{/if}
+
+<style>
+	.btn {
+		position: relative;
+		display: inline-block;
+		border: 30px solid transparent;
+		border-width: 16px 20px 32px 16px;
+		border-image: var(--back) 16 20 32 16 fill / 16px 20px 32px 16px repeat;
+		padding: 0.7rem 1rem;
+		color: black;
+		font-family: "Zero Cool", Arial, Helvetica, sans-serif;
+		font-size: 1.8rem;
+	}
+	.btn:hover,
+	.btn:focus-visible {
+		filter: invert(1);
+	}
+	.btn_arrow {
+		margin-right: 7rem;
+	}
+	.btn_small {
+		padding: 0.5rem 1rem;
+		border-width: 8px 12px 21px 8px;
+		border-image: var(--back) 8 12 21 8 fill / 8px 12px 21px 8px repeat;
+	}
+	.arrow {
+		position: absolute;
+		top: 50%;
+		right: -16px;
+		transform: translate(100%, -50%);
+	}
+</style>
