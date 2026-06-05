@@ -210,7 +210,7 @@
 			color: inherit;
 		}
 
-		:global(.btn-info) :global(img) {
+		section :global(.btn-info) :global(img) {
 			filter: none !important;
 		}
 
@@ -230,11 +230,6 @@
 		.social-links,
 		.social-links img {
 			font-size: 1.5em;
-		}
-	}
-	@media screen and (min-width: 901px) {
-		.lg-hide {
-			display: none;
 		}
 	}
 	@media screen and (((min-width: 901px) and (max-width: 2000px)) or ((min-width: 2000px) and (max-height: 900px))) {

@@ -1,6 +1,7 @@
 <script>
 	import { resolve } from "$app/paths";
 	import Button from "$lib/components/button/Button.svelte";
+	import Stripe from "$lib/components/Stripe.svelte";
 
 	const rows = [
 		["/imgs/gallery/1.webp", "/imgs/gallery/2.webp", "/imgs/gallery/3.webp"],
@@ -20,7 +21,7 @@
 				</div>
 			{/each}
 		</div>
-		<h2 class="stripe h3">Билеты уже в продаже</h2>
+		<Stripe bottom="2.5rem">Билеты уже в продаже</Stripe>
 	</div>
 	<div class="content">
 		<p>
@@ -54,20 +55,6 @@
 		height: clamp(210px, 96px + 18vw, 360px);
 		aspect-ratio: 1.78;
 		object-fit: cover;
-	}
-
-	.stripe {
-		position: absolute;
-		bottom: 2.5rem;
-		width: 120%;
-		background-color: var(--theme-accent-bg);
-		color: var(--theme-accent-text);
-		padding: min(0.75em, 2rem);
-		padding-left: calc(min(0.75em, 2rem) + 0.5em);
-		text-transform: uppercase;
-		text-align: center;
-		transition: var(--theme-transition);
-		transform: translateX(-10%) rotate(2.42deg);
 	}
 
 	.content {

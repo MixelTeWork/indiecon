@@ -107,13 +107,5 @@
 			background-color: var(--theme-main-bg);
 			transition: var(--theme-transition);
 		}
-		.sm-hide {
-			display: none;
-		}
-	}
-	@media screen and (min-width: 901px) {
-		.lg-hide {
-			display: none;
-		}
 	}
 </style>

@@ -78,6 +78,17 @@ body {
 	font-weight: 900;
 }
 
+@media screen and (max-width: 900px) {
+	.sm-hide {
+		display: none !important;
+	}
+}
+@media screen and (min-width: 901px) {
+	.lg-hide {
+		display: none !important;
+	}
+}
+
 img,
 picture,
 video,
