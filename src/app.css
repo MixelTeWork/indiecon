@@ -49,6 +49,7 @@
 html,
 body {
 	min-height: 100%;
+	min-width: 320px;
 }
 
 body {
@@ -59,6 +60,7 @@ body {
 	transition: var(--theme-transition);
 	font-family: "Montserrat", Arial, Helvetica, sans-serif;
 	font-size: clamp(0.875rem, 0.8rem + 0.37vw, 1.04rem);
+	font-weight: 500;
 	line-height: 1.2;
 }
 
@@ -68,6 +70,11 @@ body {
 
 .h2 {
 	font-size: clamp(2.18rem, 1.4rem + 3.9vw, 4.53rem);
+	font-weight: 900;
+}
+
+.h3 {
+	font-size: clamp(1.3rem, 0.3626rem + 4.4vw, 4.53125rem);
 	font-weight: 900;
 }
 

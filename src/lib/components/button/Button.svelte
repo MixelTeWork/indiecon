@@ -9,12 +9,15 @@
 		children,
 		small,
 		arrow: addArrow = false,
+		white_arrow = false,
 		href,
+		class: className,
 		...props
 	}: HTMLButtonAttributes &
 		HTMLAnchorAttributes & {
 			small?: boolean;
 			arrow?: boolean;
+			white_arrow?: boolean;
 		} = $props();
 
 	const backUrl = $derived(`url("${small ? back2 : back}")`);
@@ -25,22 +28,22 @@
 		{href}
 		{...props}
 		style:--back={backUrl}
-		class={["btn", addArrow && "btn_arrow", small && "btn_small"]}
+		class={[className, "btn", addArrow && "btn_arrow", small && "btn_small"]}
 	>
 		{@render children?.()}
 		{#if addArrow}
-			<img src={arrow} alt="arrow" class="arrow" />
+			<img src={arrow} alt="arrow" class={["arrow", white_arrow && "white_arrow"]} />
 		{/if}
 	</a>
 {:else}
 	<button
 		{...props}
 		style:--back={backUrl}
-		class={["btn", addArrow && "btn_arrow", small && "btn_small"]}
+		class={[className, "btn", addArrow && "btn_arrow", small && "btn_small"]}
 	>
 		{@render children?.()}
 		{#if addArrow}
-			<img src={arrow} alt="arrow" class="arrow" />
+			<img src={arrow} alt="arrow" class={["arrow", white_arrow && "white_arrow"]} />
 		{/if}
 	</button>
 {/if}
@@ -52,27 +55,34 @@
 		border: 30px solid transparent;
 		border-width: 16px 20px 32px 16px;
 		border-image: var(--back) 16 20 32 16 fill / 16px 20px 32px 16px repeat;
-		padding: 0.7rem 1rem;
+		padding: 0.1em 0.5em;
 		color: black;
 		font-family: "Zero Cool", Arial, Helvetica, sans-serif;
-		font-size: 1.8rem;
+		/* font-size: 1.8rem; */
+		font-size: clamp(1.75rem, 0.8281rem + 1.75vw, 2.1875rem);
+		transition: filter 100ms;
+		white-space: nowrap;
 	}
 	.btn:hover,
 	.btn:focus-visible {
 		filter: invert(1);
 	}
 	.btn_arrow {
-		margin-right: 7rem;
+		margin-right: calc(7rem * clamp(0.7, 100vw / 600px, 1));
 	}
 	.btn_small {
 		padding: 0.5rem 1rem;
-		border-width: 8px 12px 21px 8px;
-		border-image: var(--back) 8 12 21 8 fill / 8px 12px 21px 8px repeat;
+		border-width: 8px 12px 22px 8px;
+		border-image: var(--back) 8 12 22 8 fill / 8px 12px 22px 8px repeat;
 	}
 	.arrow {
 		position: absolute;
 		top: 50%;
-		right: -16px;
-		transform: translate(100%, -50%);
+		right: -20px;
+		transform: translate(100%, -50%) scale(clamp(0.7, 100vw / 600px, 1));
+		transform-origin: left;
+	}
+	.white_arrow {
+		filter: invert(1);
 	}
 </style>
