@@ -11,6 +11,9 @@
 	--theme-main-bg: var(--color-white);
 	--theme-main-text: var(--color-black);
 
+	--theme-primary-bg: var(--color-blue);
+	--theme-primary-text: var(--color-white);
+
 	--theme-accent-bg: var(--color-orange);
 	--theme-accent-text: var(--color-white);
 
@@ -23,6 +26,9 @@
 .dark {
 	--theme-main-bg: var(--color-black);
 	--theme-main-text: var(--color-white);
+
+	--theme-primary-bg: var(--color-blue);
+	--theme-primary-text: var(--color-white);
 
 	--theme-accent-bg: var(--color-blue);
 	--theme-accent-text: var(--color-white);
@@ -74,7 +80,7 @@ body {
 }
 
 .h3 {
-	font-size: clamp(1.3rem, 0.3626rem + 4.4vw, 4.53125rem);
+	font-size: clamp(1.3rem, 0.3626rem + 4.4vw, 4.53rem);
 	font-weight: 900;
 }
 

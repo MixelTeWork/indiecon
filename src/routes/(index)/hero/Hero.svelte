@@ -119,8 +119,8 @@
 	}
 	.wire2 {
 		height: calc(27.7vh + var(--sn) * -12vh);
-		top: calc(-36vh + var(--sn) * 13vh);
-		left: calc(-39.3vh + var(--sn) * 20vh);
+		top: calc(-36vh + var(--sn) * 14vh);
+		left: calc(-39.3vh + var(--sn) * 19vh);
 		rotate: calc(var(--sn) * var(--sn) * 20deg);
 		scale: calc(1 + var(--sn) * -0.25) calc(1 + var(--sn) * 0.5);
 	}

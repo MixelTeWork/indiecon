@@ -247,7 +247,6 @@
 		margin-block: auto;
 		font-weight: 600;
 		text-align: center;
-		letter-spacing: 0.05em;
 		text-transform: uppercase;
 		overflow-wrap: anywhere;
 	}
