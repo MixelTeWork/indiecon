@@ -1,12 +1,17 @@
 <script>
-	import { resolve } from "$app/paths";
+	import { resolve, asset } from "$app/paths";
 	import Button from "$lib/components/button/Button.svelte";
 	import Stripe from "$lib/components/Stripe.svelte";
 
 	const rows = [
-		["/imgs/gallery/1.webp", "/imgs/gallery/2.webp", "/imgs/gallery/3.webp"],
-		["/imgs/gallery/4.webp", "/imgs/gallery/5.webp", "/imgs/gallery/6.webp", "/imgs/gallery/7.webp"],
-		["/imgs/gallery/8.webp", "/imgs/gallery/9.webp", "/imgs/gallery/10.webp"],
+		[asset("/imgs/gallery/1.webp"), asset("/imgs/gallery/2.webp"), asset("/imgs/gallery/3.webp")],
+		[
+			asset("/imgs/gallery/4.webp"),
+			asset("/imgs/gallery/5.webp"),
+			asset("/imgs/gallery/6.webp"),
+			asset("/imgs/gallery/7.webp"),
+		],
+		[asset("/imgs/gallery/8.webp"), asset("/imgs/gallery/9.webp"), asset("/imgs/gallery/10.webp")],
 	];
 </script>
 
