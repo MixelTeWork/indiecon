@@ -6,11 +6,11 @@
 	let open = $state(false);
 
 	const navItems = [
-		{ name: "Информация", href: resolve("/") },
-		{ name: "Билеты", href: resolve("/") },
-		{ name: "Прошедшее", href: resolve("/") },
-		{ name: "О нас", href: resolve("/") },
-		{ name: "Квест", href: resolve("/") },
+		{ name: "Информация", href: resolve("/?p=info") },
+		{ name: "Билеты", href: resolve("/?p=tickets") },
+		{ name: "Прошедшее", href: resolve("/?p=past") },
+		{ name: "О нас", href: resolve("/?p=about") },
+		{ name: "Квест", href: resolve("/?p=quest") },
 	];
 </script>
 
