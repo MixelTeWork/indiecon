@@ -17,7 +17,7 @@
 	--theme-secondary-bg: var(--color-black);
 	--theme-secondary-text: var(--color-white);
 
-	--theme-transition: background-color 0.3s, color 0.15s;
+	--theme-transition: background-color 0.3s, color 0.15s, border 0.3s;
 }
 
 .dark {

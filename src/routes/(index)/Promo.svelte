@@ -71,7 +71,7 @@
 	.circle__inner2__inner {
 		background-color: var(--theme-secondary-bg);
 		background-color: black;
-		height: calc(50% - 8% * var(--m));
+		height: calc(45% - 8% * var(--m));
 	}
 	.circle__inner1 {
 		transform: translate(-50%, -50%) translateX(calc(-25% * var(--m)));
@@ -87,8 +87,8 @@
 	}
 	.circle__inner2__inner {
 		left: 0%;
-		transform: translate(10%, -50%);
-		aspect-ratio: 0.25;
+		transform: translate(18%, -50%);
+		aspect-ratio: 0.2;
 	}
 
 	.text {

@@ -7,6 +7,7 @@
 
 	const {
 		children,
+		size = 1,
 		small,
 		arrow: addArrow = false,
 		white_arrow = false,
@@ -15,6 +16,7 @@
 		...props
 	}: HTMLButtonAttributes &
 		HTMLAnchorAttributes & {
+			size?: number;
 			small?: boolean;
 			arrow?: boolean;
 			white_arrow?: boolean;
@@ -28,6 +30,7 @@
 		{href}
 		{...props}
 		style:--back={backUrl}
+		style:--size={size}
 		class={[className, "btn", addArrow && "btn_arrow", small && "btn_small"]}
 	>
 		{@render children?.()}
@@ -39,6 +42,7 @@
 	<button
 		{...props}
 		style:--back={backUrl}
+		style:--size={size}
 		class={[className, "btn", addArrow && "btn_arrow", small && "btn_small"]}
 	>
 		{@render children?.()}
@@ -59,7 +63,7 @@
 		color: black;
 		font-family: "Zero Cool", Arial, Helvetica, sans-serif;
 		/* font-size: 1.8rem; */
-		font-size: clamp(1.75rem, 0.8281rem + 1.75vw, 2.1875rem);
+		font-size: calc(clamp(1.75rem, 0.8281rem + 1.75vw, 2.1875rem) * var(--size, 1));
 		transition: filter 100ms;
 		white-space: nowrap;
 	}
