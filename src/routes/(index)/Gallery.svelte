@@ -41,6 +41,8 @@
 		position: relative;
 		overflow: hidden;
 		padding-bottom: 1rem;
+
+		view-timeline: --galleryTimeline y;
 	}
 	.rows {
 		display: flex;
@@ -50,10 +52,18 @@
 	.row {
 		display: flex;
 		justify-content: center;
+
+		animation: moveLeft linear both;
+		animation-timeline: --galleryTimeline;
+		animation-range: entry 0% exit 100%;
+	}
+	.row:nth-child(even) {
+		animation-name: moveRight;
 	}
 	.row img {
 		height: clamp(210px, 96px + 18vw, 360px);
-		aspect-ratio: 1.78;
+		/* aspect-ratio: 1.78; */
+		aspect-ratio: 1.85;
 		object-fit: cover;
 	}
 
@@ -77,6 +87,23 @@
 		}
 		p {
 			text-align: center;
+		}
+	}
+
+	@keyframes moveLeft {
+		from {
+			transform: translateX(40px);
+		}
+		to {
+			transform: translateX(-40px);
+		}
+	}
+	@keyframes moveRight {
+		from {
+			transform: translateX(-40px);
+		}
+		to {
+			transform: translateX(40px);
 		}
 	}
 </style>

@@ -1,6 +1,24 @@
-<script>
+<script lang="ts">
 	import Stripe from "$lib/components/Stripe.svelte";
+
+	let circle: HTMLDivElement;
+	let coords: { x: number; y: number } = $state({ x: 0, y: 0 });
+
+	function handleMouseMove(event: MouseEvent) {
+		if (!circle) return;
+		const px = event.pageX / window.innerWidth;
+		const py = event.pageY / window.innerHeight;
+		const rect = circle.getBoundingClientRect();
+		const cx = (rect.left + window.scrollX) / window.innerWidth;
+		const cy = (rect.top + window.scrollY) / window.innerHeight;
+
+		const clamp = (x: number) => Math.max(Math.min(x, 1), -1);
+
+		coords = { x: clamp(px - cx) * 15, y: clamp(py - cy) * 10 };
+	}
 </script>
+
+<svelte:window onmousemove={handleMouseMove} />
 
 <section>
 	<div class="clip">
@@ -18,7 +36,7 @@
 			<div class="text__right"></div>
 		</div>
 		<div class="circle circle_main">
-			<div class="circle circle__inner1">
+			<div class="circle circle__inner1" style:--dx="{coords.x}%" style:--dy="{coords.y}%" bind:this={circle}>
 				<div class="circle circle__inner1__inner"></div>
 			</div>
 			<div class="circle circle__inner2">
@@ -127,5 +145,11 @@
 	.text_elipsis {
 		display: block;
 		height: 0;
+	}
+
+	@media (pointer: fine) {
+		.circle__inner1 {
+			transform: translate(-50%, -50%) translateX(calc(-25% * var(--m))) translate(var(--dx), var(--dy));
+		}
 	}
 </style>

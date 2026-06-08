@@ -103,6 +103,7 @@
 		height: calc(30vh + var(--sn) * -15vh);
 		top: calc(-31vh + var(--sn) * 10vh);
 		left: calc(18vh + var(--sn) * -15vh);
+		animation: pulse 4s infinite ease-in-out;
 	}
 	@media screen and (max-aspect-ratio: 1) {
 		.quest {
@@ -113,6 +114,8 @@
 		height: calc(15.8vh + var(--sn) * -6vh);
 		top: calc(-37vh + var(--sn) * 9vh);
 		left: calc(-50vh + var(--sn) * 28.8vh);
+		animation: joystick-wobble 3s ease-in-out alternate infinite;
+		transform-origin: bottom center;
 	}
 	.wire2 {
 		height: calc(27.7vh + var(--sn) * -12vh);
@@ -125,6 +128,7 @@
 		height: calc(11.6vh + var(--sn) * -5vh);
 		top: calc(30vh + var(--sn) * -9vh);
 		left: calc(50.8vh + var(--sn) * -45.8vh);
+		animation: controller-float 4s ease-in-out infinite;
 	}
 	.wire1 {
 		top: calc(16vh + var(--sn) * -5vh);
@@ -259,6 +263,34 @@
 		}
 		.blue {
 			background: #1919cf;
+		}
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			transform: scale(1) translateY(0%);
+		}
+		50% {
+			transform: scale(1.03) translateY(-2.5%);
+		}
+	}
+
+	@keyframes joystick-wobble {
+		0% {
+			transform: rotate(-4deg) translateY(-1px);
+		}
+		100% {
+			transform: rotate(4deg) translateY(1px);
+		}
+	}
+	@keyframes controller-float {
+		0%,
+		100% {
+			transform: translateY(0) rotate(0deg);
+		}
+		50% {
+			transform: translateY(-6px) rotate(-2deg);
 		}
 	}
 </style>
