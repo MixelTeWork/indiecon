@@ -13,7 +13,7 @@
 
 	<div class="hero">
 		<span class="date">12.08.2025</span>
-		<img src={asset("/imgs/past_fest/hero_2025.webp")} alt="Прошедший фестиваль 2025" />
+		<img src={asset("/imgs/past_fest/hero_2025.webp")} alt="Прошедший фестиваль 2025" loading="lazy" />
 	</div>
 
 	<div class="review h3">
@@ -55,8 +55,9 @@
 	}
 
 	.title {
-		background-color: var(--theme-secondary-bg, #000);
-		color: var(--theme-secondary-text, #fff);
+		background-color: var(--theme-secondary-bg);
+		color: var(--theme-secondary-text);
+		transition: var(--theme-transition);
 		text-align: center;
 		text-transform: uppercase;
 		padding: 0.5em 0;

@@ -16,7 +16,7 @@
 
 <header class={{ open }}>
 	<a class="logo" href={resolve("/")}>
-		<img src={logo} alt="logo" />
+		<img src={logo} alt="Индикон" />
 	</a>
 
 	<nav>

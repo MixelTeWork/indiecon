@@ -118,7 +118,7 @@
 			{#each visibleItems as item, i (item.id)}
 				<div class="card" transition:fade style:grid-column={(i % cols) + 1} style:grid-row={Math.floor(i / cols) + 1}>
 					<div class="card__image">
-						<img src={item.img} alt={item.alt} />
+						<img src={item.img} alt={item.alt} loading="lazy" />
 					</div>
 					<h3 class="card__title">{item.title}</h3>
 					<div class="card__text">

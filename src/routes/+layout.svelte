@@ -3,6 +3,7 @@
 	import "../app.css";
 	import "$lib/fonts/fonts.css";
 	import Header from "$lib/components/Header.svelte";
+	import Footer from "$lib/components/Footer.svelte";
 
 	let { children } = $props();
 </script>
@@ -19,7 +20,7 @@
 		{@render children()}
 	</main>
 
-	<!-- <Footer /> -->
+	<Footer />
 </div>
 
 <style>

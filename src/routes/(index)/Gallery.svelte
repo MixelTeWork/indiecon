@@ -21,7 +21,7 @@
 			{#each rows as row, i (i)}
 				<div class="row">
 					{#each row as src, i (i)}
-						<img {src} alt="Фото" />
+						<img {src} alt="Фото" loading="lazy" />
 					{/each}
 				</div>
 			{/each}
