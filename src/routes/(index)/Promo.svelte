@@ -3,11 +3,12 @@
 
 	let circle: HTMLDivElement;
 	let coords: { x: number; y: number } = $state({ x: 0, y: 0 });
+	let clientPos: { x: number; y: number } | null = $state(null);
 
-	function handleMouseMove(event: MouseEvent) {
+	function update(pageX: number, pageY: number) {
 		if (!circle) return;
-		const px = event.pageX / window.innerWidth;
-		const py = event.pageY / window.innerHeight;
+		const px = pageX / window.innerWidth;
+		const py = pageY / window.innerHeight;
 		const rect = circle.getBoundingClientRect();
 		const cx = (rect.left + window.scrollX) / window.innerWidth;
 		const cy = (rect.top + window.scrollY) / window.innerHeight;
@@ -16,9 +17,19 @@
 
 		coords = { x: clamp(px - cx) * 15, y: clamp(py - cy) * 10 };
 	}
+
+	function handleMouseMove(e: MouseEvent) {
+		clientPos = { x: e.clientX, y: e.clientY };
+		update(e.pageX, e.pageY);
+	}
+
+	function handleScroll() {
+		if (!clientPos) return;
+		update(clientPos.x, clientPos.y + window.scrollY);
+	}
 </script>
 
-<svelte:window onmousemove={handleMouseMove} />
+<svelte:window onmousemove={handleMouseMove} onscroll={handleScroll} />
 
 <section>
 	<div class="clip">
