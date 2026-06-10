@@ -1,11 +1,11 @@
 <script>
 	import { resolve } from "$app/paths";
 	import Button from "$lib/components/button/Button.svelte";
+	import tg from "$lib/assets/tg.svg";
+	import vk from "$lib/assets/vk.svg";
 
 	import back from "./back.svg";
 	import logo from "./logo.svg";
-	import tg from "./tg.svg";
-	import vk from "./vk.svg";
 	import controller from "./controller.svg";
 	import joystick from "./joystick.svg";
 	import quest from "./quest.svg";
@@ -39,7 +39,7 @@
 					игру, музыку, идею или жизнь.
 				</p>
 			</div>
-			<Button href={resolve("/")} arrow white_arrow class="btn-info">Информация</Button>
+			<Button href={resolve("/info")} arrow white_arrow class="btn-info">Информация</Button>
 		</div>
 		<div class="sep lg-hide"></div>
 		<div class="row">
@@ -50,8 +50,8 @@
 				</p>
 			</div>
 			<div class="social-links">
-				<Button href={resolve("/")} small><img src={tg} alt="Telegram" /></Button>
-				<Button href={resolve("/")} small><img src={vk} alt="ВКонтакте" /></Button>
+				<Button href="https://example.com" small target="_blank"><img src={tg} alt="Telegram" /></Button>
+				<Button href="https://example.com" small target="_blank"><img src={vk} alt="ВКонтакте" /></Button>
 			</div>
 		</div>
 	</div>

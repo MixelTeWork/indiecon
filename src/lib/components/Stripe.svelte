@@ -4,19 +4,23 @@
 	const {
 		children,
 		secondary,
+		centerY,
+		large,
 		reverse,
 		top,
 		bottom,
 	}: {
 		children: Snippet;
 		secondary?: boolean;
+		centerY?: boolean;
+		large?: boolean;
 		reverse?: boolean;
 		top?: string;
 		bottom?: string;
 	} = $props();
 </script>
 
-<h2 class={{ reverse, secondary, h3: 1 }} style:top style:bottom>
+<h2 class={{ reverse, secondary, centerY, large, h3: 1 }} style:top style:bottom>
 	<span>{@render children()}</span>
 </h2>
 
@@ -32,10 +36,15 @@
 		text-transform: uppercase;
 		text-align: center;
 		transition: var(--theme-transition);
-		transform: translateX(-10%) rotate(var(--_rot));
+		translate: -10% 0;
+		rotate: var(--_rot);
 	}
 	.reverse {
-		transform: translateX(-10%) rotate(calc(-1 * var(--_rot)));
+		rotate: calc(-1 * var(--_rot));
+	}
+	.centerY {
+		top: 50%;
+		translate: -10% -50%;
 	}
 	.secondary {
 		--_rot: 3.12deg;
@@ -44,7 +53,8 @@
 		padding: min(0.5em, 1.8rem);
 		padding-left: calc(min(0.5em, 1.8rem) + 0.5em);
 	}
-	.secondary span {
+	.secondary span,
+	.large span {
 		font-size: calc(1.2em - 0.2em * clamp(0, (100vw - 700px) / 400px, 1));
 	}
 </style>

@@ -6,7 +6,7 @@
 	let open = $state(false);
 
 	const navItems = [
-		{ name: "Информация", href: resolve("/?p=info") },
+		{ name: "Информация", href: resolve("/info") },
 		{ name: "Билеты", href: resolve("/?p=tickets") },
 		{ name: "Прошедшее", href: resolve("/?p=past") },
 		{ name: "О нас", href: resolve("/?p=about") },
@@ -15,22 +15,18 @@
 </script>
 
 <header class={{ open }}>
-	<a class="logo" href={resolve("/")}>
+	<a class="logo" href={resolve("/")} onclick={() => (open = false)}>
 		<img src={logo} alt="Индикон" />
 	</a>
 
 	<nav>
 		{#each navItems as { name, href } (href)}
-			<a {href} class="nav-item">{name}</a>
+			<a {href} class="nav-item" onclick={() => (open = false)}>{name}</a>
 		{/each}
-		<button class="theme-toggle lg-hide" onclick={theme.toggle} aria-label="Переключение темы">
-			Светл/Темн
-		</button>
+		<button class="theme-toggle lg-hide" onclick={theme.toggle} aria-label="Переключение темы"> Светл/Темн </button>
 	</nav>
 
-	<button class="theme-toggle sm-hide" onclick={theme.toggle} aria-label="Переключение темы">
-		Светл/Темн
-	</button>
+	<button class="theme-toggle sm-hide" onclick={theme.toggle} aria-label="Переключение темы"> Светл/Темн </button>
 	<button class="menu-toggle lg-hide" onclick={() => (open = !open)} aria-label="Переключение темы">
 		<span></span>
 		<span></span>

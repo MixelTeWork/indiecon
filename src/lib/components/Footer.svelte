@@ -23,7 +23,7 @@
 	footer {
 		padding-inline: clamp(1.25rem, -0.75rem + 8vw, 6.25rem);
 		padding-top: clamp(2.75rem, 1.65rem + 4.4vw, 5.5rem);
-		padding-bottom: clamp(6.5rem, 7.2rem + -2.8vw, 4.75rem);
+		padding-bottom: clamp(9rem, 10.7rem + -6.8vw, 4.75rem);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -56,11 +56,8 @@
 		.info {
 			font-size: inherit;
 		}
-	}
-
-	@media (max-width: 345px) {
 		.logo img {
-			height: 32px;
+			height: 24px;
 		}
 	}
 </style>
