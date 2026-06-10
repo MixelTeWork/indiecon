@@ -1,7 +1,13 @@
-<script>
+<script lang="ts">
 	import Placeholder from "./Placeholder.svelte";
 
-	const schedule = [
+	interface ScheduleItem {
+		time: string;
+		title: string;
+		desc?: string;
+	}
+
+	const schedule: ScheduleItem[] = [
 		{
 			time: "10:00 — 11:00",
 			title: "Регистрация участников",
@@ -88,53 +94,33 @@
 			desc: "Общение, музыка, свободная программа",
 		},
 	];
-
-	const col1 = schedule.slice(0, 6);
-	const col2 = schedule.slice(6, 13);
-	const col3 = schedule.slice(13);
 </script>
 
 <section>
-	<div class="card">
-		{#each col1 as item, i (i)}
-			<div class="item">
-				<time class="item__time">{item.time}</time>
-				<h3 class="item__title">{item.title}</h3>
-				{#if item.desc}
-					<p class="item__description">{item.desc}</p>
-				{/if}
-			</div>
-		{/each}
-	</div>
-
-	<div class="card">
-		{#each col2 as item, i (i)}
-			<div class="item">
-				<time class="item__time">{item.time}</time>
-				<h3 class="item__title">{item.title}</h3>
-				{#if item.desc}
-					<p class="item__description">{item.desc}</p>
-				{/if}
-			</div>
-		{/each}
-	</div>
-
-	<div class="card">
-		{#each col3 as item, i (i)}
-			<div class="item">
-				<time class="item__time">{item.time}</time>
-				<h3 class="item__title">{item.title}</h3>
-				{#if item.desc}
-					<p class="item__description">{item.desc}</p>
-				{/if}
-			</div>
-		{/each}
-
-		<div class="placeholder">
-			<Placeholder />
-		</div>
-	</div>
+	{@render card(schedule.slice(0, 6))}
+	{@render card(schedule.slice(6, 13))}
+	{@render card(schedule.slice(13), true)}
 </section>
+
+{#snippet card(items: ScheduleItem[], addPlaceholder = false)}
+	<div class="card">
+		{#each items as item, i (i)}
+			<div class="item">
+				<time class="item__time">{item.time}</time>
+				<h3 class="item__title">{item.title}</h3>
+				{#if item.desc}
+					<p class="item__description">{item.desc}</p>
+				{/if}
+			</div>
+		{/each}
+
+		{#if addPlaceholder}
+			<div class="placeholder">
+				<Placeholder />
+			</div>
+		{/if}
+	</div>
+{/snippet}
 
 <style>
 	section {
