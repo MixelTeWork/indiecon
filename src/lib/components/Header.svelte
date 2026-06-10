@@ -23,15 +23,15 @@
 		{#each navItems as { name, href } (href)}
 			<a {href} class="nav-item">{name}</a>
 		{/each}
-		<button class="theme-toggle lg-hide" onclick={theme.toggle} aria-label="Toggle theme">
+		<button class="theme-toggle lg-hide" onclick={theme.toggle} aria-label="Переключение темы">
 			Светл/Темн
 		</button>
 	</nav>
 
-	<button class="theme-toggle sm-hide" onclick={theme.toggle} aria-label="Toggle theme">
+	<button class="theme-toggle sm-hide" onclick={theme.toggle} aria-label="Переключение темы">
 		Светл/Темн
 	</button>
-	<button class="menu-toggle lg-hide" onclick={() => (open = !open)} aria-label="Toggle theme">
+	<button class="menu-toggle lg-hide" onclick={() => (open = !open)} aria-label="Переключение темы">
 		<span></span>
 		<span></span>
 		<span></span>

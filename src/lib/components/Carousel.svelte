@@ -110,7 +110,7 @@
 
 <section>
 	<div class="carousel">
-		<button class="btn" onclick={() => switchPage(-1)} aria-label="Previous page">
+		<button class="btn" onclick={() => switchPage(-1)} aria-label="Предыдущая страница">
 			{@render arrow()}
 		</button>
 
@@ -128,7 +128,7 @@
 			{/each}
 		</div>
 
-		<button class="btn" onclick={() => switchPage(1)} aria-label="Next page">
+		<button class="btn" onclick={() => switchPage(1)} aria-label="Следующая страница">
 			{@render arrow(true)}
 		</button>
 	</div>
