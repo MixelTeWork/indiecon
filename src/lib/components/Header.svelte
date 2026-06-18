@@ -9,7 +9,7 @@
 		{ name: "Информация", href: resolve("/info") },
 		{ name: "Билеты", href: resolve("/?p=tickets") },
 		{ name: "Прошедшее", href: resolve("/?p=past") },
-		{ name: "О нас", href: resolve("/?p=about") },
+		{ name: "О нас", href: resolve("/about") },
 		{ name: "Квест", href: resolve("/?p=quest") },
 	];
 </script>

@@ -3,12 +3,12 @@
 	import Button from "$lib/components/button/Button.svelte";
 
 	const team = [
-		{ id: "p1", name: "Главный организатор", bg: "#002ff7", img: "/imgs/team/member_1.webp" },
-		{ id: "p2", name: "Организатор волонтеров", bg: "#ff3f25", img: "/imgs/team/member_2.webp" },
-		{ id: "p3", name: "СММ, Организатор команды мерча", bg: "#ffbf00", img: "/imgs/team/member_3.webp" },
-		{ id: "p4", name: "Организатор гейм зоны", bg: "#000000", img: "/imgs/team/member_4.webp" },
-		{ id: "p5", name: "Организатор сцены", bg: "#d81fff", img: "/imgs/team/member_5.webp" },
-		{ id: "p6", name: "Организатор маркета", bg: "#00c3ff", img: "/imgs/team/member_6.webp" },
+		{ id: "p1", name: "Главный организатор", bg: "#002ff7", img: "/imgs/team/andrey.webp" },
+		{ id: "p2", name: "Организатор волонтеров", bg: "#ff3f25", img: "/imgs/team/savvatiy.webp" },
+		{ id: "p3", name: "СММ, Организатор команды мерча", bg: "#ffbf00", img: "/imgs/team/wolfi.webp" },
+		{ id: "p4", name: "Организатор гейм зоны", bg: "#000000", img: "/imgs/team/misha.webp" },
+		{ id: "p5", name: "Организатор сцены", bg: "#d81fff", img: "/imgs/team/ksenia.webp" },
+		{ id: "p6", name: "Организатор маркета", bg: "#00c3ff", img: "/imgs/team/sveta.webp" },
 	];
 </script>
 
@@ -39,7 +39,7 @@
 			посетить сами: атмосферные, живые и сделанные с вниманием к деталям. Для нас важно не просто организовать событие,
 			а собрать вокруг него людей, которым близко творчество, эксперименты и желание делать что-то по-настоящему своё.
 		</p>
-		<Button href={resolve("/")} arrow size={0.8}>ОРГАНИЗАТОРЫ</Button>
+		<Button href={resolve("/about")} arrow size={0.8}>ОРГАНИЗАТОРЫ</Button>
 	</div>
 </section>
 
