@@ -12,7 +12,7 @@
 			независимой цифровой сцены. Узнайте больше об участниках, их проектах и активности в рамках мероприятия.
 		</p>
 	</div>
-	<Button href={resolve("/")} arrow size={0.9}>Спец гости</Button>
+	<Button href={resolve("/info")} arrow size={0.9}>Спец гости</Button>
 </section>
 
 <Carousel />

@@ -22,7 +22,9 @@
 			<img class="joystick" src={joystick} alt="" />
 			<img class="controller" src={controller} alt="" />
 			<img class="logo" src={logo} alt="Логотип Индикон" />
-			<img class="quest" src={quest} alt="Квест" />
+			<a class="quest" href={resolve("/quest")}>
+				<img class="quest" src={quest} alt="Квест" />
+			</a>
 		</div>
 	</div>
 	<div class="container">
@@ -91,8 +93,10 @@
 		left: calc(-6vh + var(--sn) * 6vh);
 		top: calc(-4.7vh + var(--sn) * -10vh);
 	}
-	.hero > img {
+	.hero > * {
 		position: absolute;
+	}
+	.hero img {
 		max-width: none;
 	}
 	.logo {

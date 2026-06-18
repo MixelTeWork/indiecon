@@ -56,10 +56,10 @@
 		imgI = 0;
 	}
 
-	function nextReview() {
+	function nextImg() {
 		imgI = (imgI + 1) % fest.imgs.length;
 	}
-	function prevReview() {
+	function prevImg() {
 		imgI = (imgI - 1 + fest.imgs.length) % fest.imgs.length;
 	}
 </script>
@@ -85,13 +85,13 @@
 
 			<div class="image">
 				<div class="controls">
-					<button class="btn" onclick={nextReview} aria-label="Предыдущее изображение">
+					<button class="btn" onclick={nextImg} aria-label="Предыдущее изображение">
 						{@render arrow()}
 					</button>
 
 					<div></div>
 
-					<button class="btn" onclick={prevReview} aria-label="Следующее изображение">
+					<button class="btn" onclick={prevImg} aria-label="Следующее изображение">
 						{@render arrow(true)}
 					</button>
 				</div>

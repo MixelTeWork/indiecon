@@ -103,7 +103,7 @@
 </section>
 
 {#snippet card(items: ScheduleItem[], addPlaceholder = false)}
-	<div class="card">
+	<div class="borderedCard card">
 		{#each items as item, i (i)}
 			<div class="item">
 				<time class="item__time">{item.time}</time>
@@ -134,22 +134,12 @@
 	}
 
 	.card {
-		--bw: calc(clamp(2.7px, 1.2px + 0.2vw, 4px) * 1.5);
 		width: 100%;
 		max-width: 23em;
-		border: var(--bw) solid currentColor;
-		box-shadow: 0 calc(var(--bw) * 2) 0px #000000;
 		padding: 2em 1.5em;
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
-		clip-path: polygon(
-			0 0,
-			100% 0,
-			100% 100%,
-			calc(100% - calc(var(--bw) * 2)) calc(100% + calc(var(--bw) * 2)),
-			0% calc(100% + calc(var(--bw) * 2))
-		);
 	}
 
 	.item {
