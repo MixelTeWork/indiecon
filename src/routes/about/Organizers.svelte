@@ -1,4 +1,6 @@
 <script>
+	import { asset } from "$app/paths";
+
 	const organizers = [
 		{
 			name: "ANDREY LIPA",
@@ -57,7 +59,7 @@
 			<div class="image" style:--color={org.bg}>
 				<div class="image__bg"></div>
 
-				<img src={org.image} alt={org.name} loading="lazy" />
+				<img src={asset(org.image)} alt={org.name} loading="lazy" />
 			</div>
 		</div>
 	{/each}
