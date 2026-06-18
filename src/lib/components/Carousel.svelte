@@ -279,6 +279,12 @@
 	.btn {
 		padding: 0.5rem;
 		flex-shrink: 0;
+		transition: transform 100ms;
+	}
+	@media (pointer: fine) {
+		.btn:hover {
+			transform: scale(1.1);
+		}
 	}
 	.btn svg {
 		width: 1.45em;

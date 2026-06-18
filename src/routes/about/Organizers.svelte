@@ -51,7 +51,7 @@
 	{#each organizers as org, i (i)}
 		<div class="card">
 			<div class="info">
-				<div class="role">{org.role}</div>
+				<div class="h4">{org.role}</div>
 				<h2 class="name h2">{org.name}</h2>
 				<p class="desc">{org.desc}</p>
 			</div>
@@ -87,11 +87,6 @@
 		flex-direction: column;
 		justify-content: center;
 		gap: 3em;
-	}
-
-	.role {
-		font-size: clamp(0.8125rem, 0.3375rem + 1.9vw, 2rem);
-		font-weight: 400;
 	}
 
 	.image {

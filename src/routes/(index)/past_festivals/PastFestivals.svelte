@@ -12,12 +12,12 @@
 	<h2 class="h3 title">Прошедшие фестивали</h2>
 
 	<div class="hero">
-		<span class="date">12.08.2025</span>
+		<span class="date h4">12.08.2025</span>
 		<img src={asset("/imgs/past_fest/hero_2025.webp")} alt="Прошедший фестиваль 2025" loading="lazy" />
 	</div>
 
-	<div class="review h3">
-		<p class="review__label">Отзыв:</p>
+	<div class="review h4">
+		<p>Отзыв:</p>
 		<blockquote class="review__text">
 			“Лучший фест среди всех что я посещал. Спасибо что продолжаете торжество. Именно здесь каждый может
 			продемонстрировать свою любовь к инди играм, анимации, музыке, косплею.”
@@ -38,7 +38,7 @@
 				</p>
 			</div>
 			<div class="promo__action">
-				<Button href={resolve("/")} arrow white_arrow size={0.85}>КАК ЭТО БЫЛО</Button>
+				<Button href={resolve("/past_festivals")} arrow white_arrow size={0.85}>КАК ЭТО БЫЛО</Button>
 			</div>
 		</div>
 	</div>
@@ -51,7 +51,6 @@
 		margin: 10rem auto 0 auto;
 		display: flex;
 		flex-direction: column;
-		--fs: clamp(0.8125rem, 0.3375rem + 1.9vw, 2rem);
 	}
 
 	.title {
@@ -74,8 +73,6 @@
 		position: absolute;
 		top: clamp(1.5rem, 0.1rem + 5.6vw, 5rem);
 		left: clamp(1.5rem, 0.1rem + 5.6vw, 5rem);
-		font-size: var(--fs);
-		font-weight: 400;
 		color: #fff;
 		z-index: 2;
 	}
@@ -89,16 +86,11 @@
 	}
 
 	.review {
-		font-size: var(--fs);
 		max-width: calc(1200px + 2 * 1.5rem);
 		margin: clamp(2rem, -0.4rem + 9.6vw, 8rem) auto;
 		padding: 0 1.5rem;
 		display: flex;
 		flex-direction: column;
-	}
-
-	.review__label {
-		font-weight: 400;
 	}
 
 	.review__text {
@@ -110,7 +102,6 @@
 
 	.review__author {
 		align-self: flex-end;
-		font-weight: 400;
 	}
 
 	.promo {
@@ -151,7 +142,6 @@
 	@media screen and (max-width: 900px) {
 		.promo__inner {
 			flex-direction: column;
-			align-items: flex-start;
 		}
 
 		.promo {
