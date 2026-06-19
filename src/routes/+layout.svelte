@@ -11,10 +11,11 @@
 	let { children } = $props();
 	const url = $derived(new URL(page.url.pathname, PUBLIC_BASE_URL).href);
 	const title = "ИНДИКОН 2.0 ӏ 14+ ӏ 15.08 Москва";
+	const site_name = "Индикон";
 	const description =
-		"Любите инди игры и инди анимацию? Хотели бы встретить единомышленников, посмотреть на интересный мерч и поучаствовать в разнообразных активностях? Тогда добро пожаловать на наш фестиваль!";
-	const imgWidth = "1822";
-	const imgHeight = "728";
+		"Любите инди-игры и анимацию? Хотите встретить единомышленников, посмотреть мерч и поучаствовать в активностях? Тогда добро пожаловать на наш фестиваль!";
+	const imgWidth = "1200";
+	const imgHeight = "630";
 	const img = $derived(new URL(og_image, PUBLIC_BASE_URL).href);
 </script>
 
@@ -27,6 +28,7 @@
 
 	<meta property="og:title" content={title} />
 	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content={site_name} />
 	<meta property="og:image" content={img} />
 	<meta property="og:url" content={url} />
 
