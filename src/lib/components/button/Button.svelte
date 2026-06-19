@@ -35,7 +35,7 @@
 	>
 		{@render children?.()}
 		{#if addArrow}
-			<img src={arrow} alt="arrow" class={["arrow", white_arrow && "white_arrow"]} />
+			<img src={arrow} alt="" class={["arrow", white_arrow && "white_arrow"]} />
 		{/if}
 	</a>
 {:else}
@@ -47,7 +47,7 @@
 	>
 		{@render children?.()}
 		{#if addArrow}
-			<img src={arrow} alt="arrow" class={["arrow", white_arrow && "white_arrow"]} />
+			<img src={arrow} alt="" class={["arrow", white_arrow && "white_arrow"]} />
 		{/if}
 	</button>
 {/if}

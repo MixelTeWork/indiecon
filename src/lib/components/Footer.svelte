@@ -2,16 +2,16 @@
 	import { resolve } from "$app/paths";
 	import logo from "$lib/assets/logo.svg";
 
-	const email = "Indycon@gmail.com";
-	const phone = "8-901-698-89-40";
+	const email = "event.determination@gmail.com";
+	// const phone = "";
 </script>
 
 <footer>
 	<div class="info">
 		<h2>Контакты</h2>
 		<a href="mailto:{email}">{email}</a>
-		<a href="tel:{phone.replace(/[^0-9+]/g, '')}">{phone}</a>
-		<div class="mt">12+</div>
+		<!-- <a href="tel:{phone.replace(/[^0-9+]/g, '')}">{phone}</a> -->
+		<div class="mt">14+</div>
 	</div>
 
 	<a class="logo" href={resolve("/")}>

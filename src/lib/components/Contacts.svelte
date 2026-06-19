@@ -1,22 +1,30 @@
-<script>
+<script lang="ts">
 	import Button from "$lib/components/button/Button.svelte";
 	import tg from "$lib/assets/tg.svg";
 	import vk from "$lib/assets/vk.svg";
+
+	const { hideVK = false, altText = false }: { hideVK?: boolean; altText?: boolean } = $props();
 </script>
 
 <h2 class="heading h3">Ссылки на соц сети</h2>
 
 <div class="contacts">
 	<div class="contacts__text">
-		<h3 class="h2">Контакты</h3>
-		<p>
-			Познакомьтесь со специальными гостями — разработчиками, художниками, музыкантами, аниматорами и представителями
-			независимой цифровой сцены. Узнайте больше об участниках, их проектах и активности в рамках мероприятия.
-		</p>
+		{#if altText}
+			<p class="h4">Поближе с нами вы можете познакомиться в соцсетях нашей команды организации</p>
+		{:else}
+			<h3 class="h2">Контакты</h3>
+			<p>
+				Если хотите подробнее узнать о том, что будет на нашем мероприятии, а также поучаствовать в наших розыгрышах и
+				активностях — скорее переходите в наши соцсети!
+			</p>
+		{/if}
 	</div>
 	<div class="contacts__btns">
-		<Button href="https://example.com" small target="_blank"><img src={tg} alt="Telegram" /></Button>
-		<Button href="https://example.com" small target="_blank"><img src={vk} alt="ВКонтакте" /></Button>
+		<Button href="https://t.me/indiecon_msk" small target="_blank"><img src={tg} alt="Telegram" /></Button>
+		{#if !hideVK}
+			<Button href="https://vk.com/indiecon" small target="_blank"><img src={vk} alt="ВКонтакте" /></Button>
+		{/if}
 	</div>
 </div>
 

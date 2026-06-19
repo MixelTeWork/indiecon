@@ -3,12 +3,12 @@
 	import Button from "$lib/components/button/Button.svelte";
 
 	const team = [
-		{ id: "p1", name: "Главный организатор", bg: "#002ff7", img: "/imgs/team/andrey.webp" },
-		{ id: "p2", name: "Организатор волонтеров", bg: "#ff3f25", img: "/imgs/team/savvatiy.webp" },
-		{ id: "p3", name: "СММ, Организатор команды мерча", bg: "#ffbf00", img: "/imgs/team/wolfi.webp" },
-		{ id: "p4", name: "Организатор гейм зоны", bg: "#000000", img: "/imgs/team/misha.webp" },
-		{ id: "p5", name: "Организатор сцены", bg: "#d81fff", img: "/imgs/team/ksenia.webp" },
-		{ id: "p6", name: "Организатор маркета", bg: "#00c3ff", img: "/imgs/team/sveta.webp" },
+		{ id: "p1", name: "ANDREY LIPA", bg: "#002ff7", img: "/imgs/team/andrey.webp" },
+		{ id: "p2", name: "САВВАТИЙ SAVVATOZ", bg: "#ff3f25", img: "/imgs/team/savvatiy.webp" },
+		{ id: "p3", name: "MINI WOLFI", bg: "#ffbf00", img: "/imgs/team/wolfi.webp" },
+		{ id: "p4", name: "МИША UVB", bg: "#000000", img: "/imgs/team/misha.webp" },
+		{ id: "p5", name: "КСЕНИЯ МАЗУР", bg: "#d81fff", img: "/imgs/team/ksenia.webp" },
+		{ id: "p6", name: "СВЕТА SV_PAK", bg: "#00c3ff", img: "/imgs/team/sveta.webp" },
 	];
 </script>
 
@@ -34,10 +34,9 @@
 
 	<div class="info">
 		<p class="description">
-			Determination Event Team — команда организаторов и авторов независимых творческих проектов, объединённых тягой к
-			цифровой культуре, играм, искусству и сообществам вокруг них. Мы создаём мероприятия и проекты, которые хотели бы
-			посетить сами: атмосферные, живые и сделанные с вниманием к деталям. Для нас важно не просто организовать событие,
-			а собрать вокруг него людей, которым близко творчество, эксперименты и желание делать что-то по-настоящему своё.
+			Determination Event Team — это наша дружная команда. В первую очередь мы друзья, а во вторую (хоть и не менее
+			важную) — мы коллеги, которые совместными усилиями хотят создавать интересные, запоминающиеся фестивали,
+			объединяющие сообщества людей, которые мы так сильно любим.
 		</p>
 		<Button href={resolve("/about")} arrow size={0.8}>ОРГАНИЗАТОРЫ</Button>
 	</div>

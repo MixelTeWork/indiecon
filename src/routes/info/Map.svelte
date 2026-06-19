@@ -1,10 +1,15 @@
-<section>Карта мероприятия</section>
+<script>
+	import { textWave } from "$lib/utils/textWave";
+
+</script>
+<section use:textWave>Скоро тут будет карта</section>
 
 <style>
 	section {
 		height: 85vh;
 		margin-top: clamp(4rem, 0.6rem + 13.6vw, 12.5rem);
-		font-size: 2em;
+		font-size: 3em;
+		font-weight: 600;
 		background-color: var(--theme-accent-bg);
 		color: var(--theme-accent-text);
 		display: flex;

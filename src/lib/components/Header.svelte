@@ -2,6 +2,12 @@
 	import { resolve } from "$app/paths";
 	import { theme } from "$lib/utils/ThemeManager.svelte";
 	import logo from "$lib/assets/logo.svg";
+	import { showImgsAlt } from "$lib/utils/showImgsAlt";
+
+	$effect(() => {
+		const i = setInterval(showImgsAlt, 200);
+		return () => clearInterval(i);
+	})
 
 	let open = $state(false);
 

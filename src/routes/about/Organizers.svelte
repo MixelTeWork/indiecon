@@ -5,42 +5,36 @@
 		{
 			name: "ANDREY LIPA",
 			role: "Главный организатор",
-			desc: "Всем привет! Меня зовут Александр... Мы объединяем искусство и технологии с помощью видеоигр.",
 			bg: "#002FF7",
 			image: "/imgs/team/andrey.webp",
 		},
 		{
 			name: "MINI WOLFI",
 			role: "CMM, Организатор команды мерча",
-			desc: "Огромная благодарность... Набор мерча (открытки, перевертыши, стикерпаки, значки, брелоки, блокноты).",
 			bg: "#FFBF00",
 			image: "/imgs/team/wolfi.webp",
 		},
 		{
 			name: "МИША UVB",
 			role: "Организатор гейм зоны",
-			desc: "Координация игровых зон, консолей и интерактивных стендов на площадке.",
 			bg: "#020202",
 			image: "/imgs/team/misha.webp",
 		},
 		{
 			name: "САВВАТИЙ SAVVATOZ",
 			role: "Организатор волонтеров",
-			desc: "Управление командой волонтеров, распределение задач и координация логистики.",
 			bg: "#FF3F25",
 			image: "/imgs/team/savvatiy.webp",
 		},
 		{
 			name: "СВЕТА SV_PAK",
 			role: "Организатор маркета",
-			desc: "Отбор авторов, распределение мест на аллее авторов и контроль мерч-шопов.",
 			bg: "#00C3FF",
 			image: "/imgs/team/sveta.webp",
 		},
 		{
 			name: "КСЕНИЯ МАЗУР",
 			role: "Организатор сцены",
-			desc: "Тайминг шоу-программы, координация ведущих, артистов и технического персонала.",
 			bg: "#D81FFF",
 			image: "/imgs/team/ksenia.webp",
 		},
@@ -53,7 +47,7 @@
 			<div class="info">
 				<div class="h4">{org.role}</div>
 				<h2 class="name h2">{org.name}</h2>
-				<p class="desc">{org.desc}</p>
+				<!-- <p class="desc">{org.desc}</p> -->
 			</div>
 
 			<div class="image" style:--color={org.bg}>

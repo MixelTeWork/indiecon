@@ -147,3 +147,19 @@ button {
 		0% calc(100% + calc(var(--bw) * var(--bbm)))
 	);
 }
+
+.textWave > span {
+	display: inline-block;
+	white-space: pre;
+	animation: text-wave calc(1s * var(--dur, 2)) linear infinite alternate;
+	animation-delay: calc(-1ms * var(--d, 1));
+}
+
+@keyframes text-wave {
+	0% {
+		transform: translateY(calc(-1em * var(--m, 1)));
+	}
+	100% {
+		transform: translateY(calc(1em * var(--m, 1)));
+	}
+}

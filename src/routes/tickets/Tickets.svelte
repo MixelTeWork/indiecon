@@ -3,11 +3,13 @@
 		{
 			name: "Standard edition",
 			price: "2 200 ₽",
+			url: "https://vk.com/market/product/bilet-quotstandard-editionquot-220927851-13484258",
 			features: ["Вход на мероприятие", "Физическая Билет-Открытка"],
 		},
 		{
 			name: "Deluxe edition",
 			price: "3 300 ₽",
+			url: "https://vk.com/market/product/bilet-quotdeluxe-editionquot-220927851-13484276",
 			features: [
 				"Вход на мероприятие",
 				"Физическая Билет-Открытка + Набор мерча (открытка перевёртыш, стикерпак, значок побольше, плакат) + Ранний вход в 11:00 + Участие в автограф сессиях",
@@ -16,6 +18,7 @@
 		{
 			name: "Ultimate edition",
 			price: "5 000 ₽",
+			url: "https://vk.com/market/product/bilet-quotultimate-editionquot-220927851-13484305",
 			features: [
 				"Вход на мероприятие",
 				"Физическая Билет-Открытка",
@@ -27,6 +30,7 @@
 		{
 			name: "Спонсор",
 			price: "10 000 ₽",
+			url: "https://vk.com/market/product/bilet-quotsponsorquot-220927851-13484318",
 			features: [
 				"Благодарности с главной сцены на открытии",
 				"Вход на мероприятие",
@@ -41,6 +45,7 @@
 		{
 			name: "2.0 K",
 			price: "20 000 ₽",
+			url: "https://vk.com/market/product/bilet-quot20-kquot-220927851-13484328",
 			features: [
 				"Огромные благодарности с главной сцены на открытии",
 				"Вход на мероприятие",
@@ -57,11 +62,24 @@
 
 <section>
 	{#each tickets as ticket (ticket.name)}
-		<a class="borderedCard ticket" href="https://ya.ru">
+		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+		<a class="borderedCard ticket" href={ticket.url} target="_blank">
 			<h3 class="ticket__name">{ticket.name}</h3>
 			<ul class="ticket__features">
 				{#each ticket.features as feature, i (i)}
-					<li>{feature}</li>
+					{#if feature.includes("+")}
+					{const parts = feature.split("+")}
+						<li>
+						<div>{parts[0]}</div>
+							<ul>
+								{#each parts.slice(1) as part, i (i)}
+									<li>{part}</li>
+								{/each}
+							</ul>
+						</li>
+					{:else}
+						<li>{feature}</li>
+					{/if}
 				{/each}
 			</ul>
 			<div class="ticket__price">{ticket.price}</div>
@@ -124,6 +142,11 @@
 	ul {
 		list-style: disc;
 		margin-left: 1em;
+	}
+	ul ul {
+		list-style: "+";
+		list-style-position: inside;
+		margin-left: 0;
 	}
 
 	@media (max-width: 700px) {

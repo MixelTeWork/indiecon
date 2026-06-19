@@ -8,9 +8,10 @@
 	import logo from "./logo.svg";
 	import controller from "./controller.svg";
 	import joystick from "./joystick.svg";
-	import quest from "./quest.svg";
+	// import quest from "./quest.svg";
 	import wire1 from "./wire1.svg";
 	import wire2 from "./wire2.svg";
+	import Label from "./label/Label.svelte";
 </script>
 
 <section>
@@ -22,8 +23,9 @@
 			<img class="joystick" src={joystick} alt="" />
 			<img class="controller" src={controller} alt="" />
 			<img class="logo" src={logo} alt="Логотип Индикон" />
-			<a class="quest" href={resolve("/quest")}>
-				<img class="quest" src={quest} alt="Квест" />
+			<a class="quest" href={resolve("/tickets")}>
+				<Label />
+				<!-- <img class="quest" src={quest} alt="Квест" style:rotate="-13.74deg" /> -->
 			</a>
 		</div>
 	</div>
@@ -32,13 +34,13 @@
 			<div class="column content-about">
 				<h1 class="h2 blueTitle">ИНДИКОН</h1>
 				<p class="blueX">
-					— это место встречи инди-разработчиков, художников, аниматоров, музыкантов и всех, кто делает проекты своими
-					руками.
+					Индикон — это фестиваль для любителей инди-игр и анимации. То есть тех, кто любит или, возможно, сам создаёт
+					независимое творчество!
 				</p>
 				<p class="blue">
-					Такое мероприятие не про скучные доклады и формальные разговоры. Это живое общение, эмоции, шутки и моменты,
-					которые хочется запомнить. Мы за атмосферу, где легко подойти к незнакомому человеку и начать разговор — про
-					игру, музыку, идею или жизнь.
+					Стенды по популярным играм по типу FNAF, Hollow Knight и Undertale, встречи с популярными блогерами, а также
+					лекции от настоящих разработчиков и зоны с отечественными инди-играми. Наш фестиваль — это место встречи
+					фанатов и авторов, где каждый может почувствовать себя в окружении близких по духу людей!
 				</p>
 			</div>
 			<Button href={resolve("/info")} arrow white_arrow class="btn-info">Информация</Button>
@@ -52,8 +54,8 @@
 				</p>
 			</div>
 			<div class="social-links">
-				<Button href="https://example.com" small target="_blank"><img src={tg} alt="Telegram" /></Button>
-				<Button href="https://example.com" small target="_blank"><img src={vk} alt="ВКонтакте" /></Button>
+				<Button href="https://t.me/indiecon_msk" small target="_blank"><img src={tg} alt="Telegram" /></Button>
+				<Button href="https://vk.com/indiecon" small target="_blank"><img src={vk} alt="ВКонтакте" /></Button>
 			</div>
 		</div>
 	</div>
@@ -104,10 +106,12 @@
 		transform: translate(-50%, -50%);
 	}
 	.quest {
-		height: calc(30vh + var(--sn) * -15vh);
-		top: calc(-31vh + var(--sn) * 10vh);
+		/* height: calc(30vh + var(--sn) * -15vh); */
+		top: calc(-25vh + var(--sn) * 10vh);
 		left: calc(18vh + var(--sn) * -15vh);
 		animation: pulse 4s infinite ease-in-out;
+		rotate: 13.74deg;
+		font-size: calc(7.5vh + var(--sn) * -3vh);
 	}
 	@media screen and (max-aspect-ratio: 1) {
 		.quest {

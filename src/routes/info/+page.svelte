@@ -3,7 +3,8 @@
 	import Contacts from "$lib/components/Contacts.svelte";
 	import Stripe from "$lib/components/Stripe.svelte";
 	import Map from "./Map.svelte";
-	import TimeTable from "./TimeTable.svelte";
+	// import TimeTable from "./TimeTable.svelte";
+	import TimeTableSoon from "./TimeTableSoon.svelte";
 </script>
 
 <h1 class="h1">Информация</h1>
@@ -15,7 +16,8 @@
 	<Stripe centerY large>Расписание</Stripe>
 </div>
 
-<TimeTable />
+<!-- <TimeTable /> -->
+<TimeTableSoon />
 
 <Map />
 
