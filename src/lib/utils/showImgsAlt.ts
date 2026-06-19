@@ -5,7 +5,6 @@ export function showImgsAlt() {
 			const text = img.parentNode?.querySelector(".showImgsAlt") as HTMLElement;
 			if (text) {
 				text.style.opacity = shown ? "1" : "0";
-				return;
 			}
 		}
 		if (img.alt == "") return;
@@ -13,6 +12,8 @@ export function showImgsAlt() {
 		if (img.alt == "Индикон") return;
 		if (img.alt == "DETERMINATION") return;
 		if (img.closest(".image")) return;
+		if (img.dataset.showImgsAlt) return;
+		img.dataset.showImgsAlt = "true";
 		const container = document.createElement("div");
 		container.style.position = "relative";
 		container.style.flexShrink = "0";
