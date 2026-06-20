@@ -7,6 +7,7 @@
 		color: var(--theme-main-text);
 		transition: var(--theme-transition);
 		height: 5em;
+		text-align: center;
 		display: flex;
 		align-items: center;
 		justify-content: center;

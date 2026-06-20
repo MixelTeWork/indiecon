@@ -60,4 +60,10 @@
 			height: 24px;
 		}
 	}
+	@media (max-width: 380px) {
+		footer {
+			flex-direction: column;
+			gap: 2em;
+		}
+	}
 </style>
