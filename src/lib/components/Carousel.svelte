@@ -103,8 +103,8 @@
 
 	let pageWidth = $state(0);
 
-	let cols = $derived(pageWidth > 1400 ? 3 : pageWidth > 900 ? 2 : 1);
-	let rows = $derived(pageWidth > 900 ? 2 : 1);
+	let cols = $derived(pageWidth < 900 ? 1 : pageWidth < 1400 ? 2 : 3);
+	let rows = $derived(pageWidth < 900 ? 1 : 2);
 
 	const itemsPerPage = $derived(cols * rows);
 
