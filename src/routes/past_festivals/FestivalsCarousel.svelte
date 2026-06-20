@@ -201,7 +201,7 @@
 	}
 </script>
 
-<section class="logos">
+<!-- <section class="logos">
 	{#each pastFestivals as fest, i (i)}
 		<button
 			aria-label={`Фестиваль ${fest.title}`}
@@ -213,7 +213,7 @@
 			<img src={asset(fest.logo.url)} alt={fest.logo.alt} loading="lazy" transition:fade={{ duration: 200 }} />
 		</button>
 	{/each}
-</section>
+</section> -->
 
 <section bind:this={festSection}>
 	{#key festI}
@@ -225,8 +225,8 @@
 					</button>
 
 					<div class="controls__body festival-info">
-						<!-- <span class="year">{fest.year}</span> -->
-						<!-- <h3 class="title h1">{fest.title}</h3> -->
+						<span class="year">{fest.year}</span>
+						<h3 class="title h1">{fest.title}</h3>
 						<!-- <p class="subtitle h4">{fest.subtitle}</p> -->
 					</div>
 
@@ -243,11 +243,13 @@
 					</div>
 				</div>
 
-				<span class="year_label h4">{fest.year}</span>
-				<img src={asset(fest.banner.url)} alt={fest.banner.alt} loading="lazy" transition:fade={{ duration: 200 }} />
+				<!-- <span class="year_label h4">{fest.year}</span> -->
+				<!-- <img src={asset(fest.banner.url)} alt={fest.banner.alt} loading="lazy" transition:fade={{ duration: 200 }} /> -->
 				<!-- <div class="imageAlt showImgsAlt" transition:fade={{ duration: 200 }}>{fest.banner.alt}</div> -->
 			</div>
-			<h3 class="photo-tittle h3"><span>{fest.title}</span><span>ФОТОГРАФИИ</span></h3>
+			<img class="logo" src={asset(fest.logo.url)} alt={fest.logo.alt} loading="lazy" transition:fade={{ duration: 200 }} />
+			<img class="banner" src={asset(fest.banner.url)} alt={fest.banner.alt} loading="lazy" transition:fade={{ duration: 200 }} />
+			<!-- <h3 class="photo-tittle h3"><span>{fest.title}</span><span>ФОТОГРАФИИ</span></h3> -->
 			<div class="image">
 				<div class="controls">
 					<button class="btn" onclick={prevImg} aria-label="Предыдущее изображение">
@@ -421,6 +423,17 @@
 		flex-direction: column;
 		--_m: clamp(5rem, 1.7rem + 13.2vw, 13.25rem);
 		margin: calc(0.75 * var(--_m)) 0 calc(-0.75 * var(--_m)) 0;
+	}
+
+	.logo {
+		width: 100%;
+		height: calc(0.7 * clamp(28rem, 19rem + 35vw, 55rem));
+		object-fit: contain;
+	}
+	.banner {
+		width: 100%;
+		height: calc(0.75 * clamp(28rem, 19rem + 35vw, 55rem));
+		object-fit: cover;
 	}
 
 	.image {
