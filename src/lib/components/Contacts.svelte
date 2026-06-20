@@ -21,7 +21,7 @@
 		{/if}
 	</div>
 	<div class="contacts__btns">
-		<Button href="https://t.me/indiecon_msk" small target="_blank"><img src={tg} alt="Telegram" /></Button>
+		<Button href={altText ? "https://t.me/determevent" : "https://t.me/indiecon_msk"} small target="_blank"><img src={tg} alt="Telegram" /></Button>
 		{#if !hideVK}
 			<Button href="https://vk.com/indiecon" small target="_blank"><img src={vk} alt="ВКонтакте" /></Button>
 		{/if}

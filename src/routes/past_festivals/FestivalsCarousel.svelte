@@ -2,39 +2,55 @@
 	import { asset } from "$app/paths";
 	import { fade } from "svelte/transition";
 
-	const pastFestivals = [
+	interface Image {
+		url: string;
+		alt: string;
+	}
+
+	const pastFestivals: {
+		year: string;
+		title: string;
+		subtitle: string;
+		logo: Image;
+		banner: Image;
+		imgs: Image[];
+		review: {
+			text: string;
+			author: string;
+		};
+	}[] = [
 		{
 			year: "2023",
 			title: "ИНДИКОН",
 			subtitle: "(тут будет находиться логотип и различные узнаваемые элементы конкретного фестиваля)",
+			logo: {
+				url: "/imgs/past_fest/indiecon23_logo.webp",
+				alt: "Круглый оранжевый логотип с надписью «ИНДИ КОН» на синем абстрактном фоне, стилизованный под интерфейс компьютерного окна",
+			},
+			banner: {
+				url: "/imgs/past_fest/indiecon23_banner.webp",
+				alt: "Яркий арт-коллаж с персонажами популярных инди-игр (Фредди Фазбер, Хорнет, Айзек и другие) вокруг белой плашки с надписью «ИНДИ КОН '23»",
+			},
 			imgs: [
 				{
-					image: "/imgs/past_fest/indiecon23_1.webp",
-					imageAlt: "Круглый оранжевый логотип с надписью «ИНДИ КОН» на синем абстрактном фоне, стилизованный под интерфейс компьютерного окна",
+					url: "/imgs/past_fest/indiecon23_1.webp",
+					alt: "Два человека стоят перед большим синим баннером с логотипом фестиваля «Инди Кон»",
 				},
 				{
-					image: "/imgs/past_fest/indiecon23_2.webp",
-					imageAlt: "Яркий арт-коллаж с персонажами популярных инди-игр (Фредди Фазбер, Хорнет, Айзек и другие) вокруг белой плашки с надписью «ИНДИ КОН '23»",
+					url: "/imgs/past_fest/indiecon23_2.webp",
+					alt: "Парень в большом сомбреро и очках смотрит вверх посреди толпы людей на мероприятии",
 				},
 				{
-					image: "/imgs/past_fest/indiecon23_3.webp",
-					imageAlt: "Два человека стоят перед большим синим баннером с логотипом фестиваля «Инди Кон»",
+					url: "/imgs/past_fest/indiecon23_3.webp",
+					alt: "Человек в ростовой кукле Золотого Фредди (Golden Freddy) из Five Nights at Freddy's держит в руках маленькую плюшевую копию этого же персонажа",
 				},
 				{
-					image: "/imgs/past_fest/indiecon23_4.webp",
-					imageAlt: "Парень в большом сомбреро и очках смотрит вверх посреди толпы людей на мероприятии",
+					url: "/imgs/past_fest/indiecon23_4.webp",
+					alt: "Улыбающийся парень в синей кофте стоит между картонной фигурой Капхэда (Cuphead) и ростовой куклой аниматроника, держа в руках плюшевого Фредди",
 				},
 				{
-					image: "/imgs/past_fest/indiecon23_5.webp",
-					imageAlt: "Человек в ростовой кукле Золотого Фредди (Golden Freddy) из Five Nights at Freddy's держит в руках маленькую плюшевую копию этого же персонажа",
-				},
-				{
-					image: "/imgs/past_fest/indiecon23_6.webp",
-					imageAlt: "Улыбающийся парень в синей кофте стоит между картонной фигурой Капхэда (Cuphead) и ростовой куклой аниматроника, держа в руках плюшевого Фредди",
-				},
-				{
-					image: "/imgs/past_fest/indiecon23_7.webp",
-					imageAlt: "Два косплеера в ярких детализированных костюмах Солнца и Луны (Sun and Moon) из FNAF: Security Breach выступают на сцене",
+					url: "/imgs/past_fest/indiecon23_5.webp",
+					alt: "Два косплеера в ярких детализированных костюмах Солнца и Луны (Sun and Moon) из FNAF: Security Breach выступают на сцене",
 				},
 			],
 			review: {
@@ -46,34 +62,34 @@
 			year: "2023",
 			title: "ИНДИКОН: Halloween",
 			subtitle: "(тут будет находиться логотип и различные узнаваемые элементы конкретного фестиваля)",
+			logo: {
+				url: "/imgs/past_fest/halloween_logo.webp",
+				alt: "Тёмный круглый логотип с надписью «ИНДИ КОН», украшенный хэллоуинской тыквой и костями",
+			},
+			banner: {
+				url: "/imgs/past_fest/halloween_banner.webp",
+				alt: "Атмосферный хэллоуинский арт в тёплых тонах с изображением старого светящегося монитора, на котором написан текст «ИНДИ КОН HALLOWEEN»",
+			},
 			imgs: [
 				{
-					image: "/imgs/past_fest/halloween_1.webp",
-					imageAlt: "Большая группа людей и косплееров в праздничном лофтовом помещении с кирпичными стенами, украшенном к Хэллоуину",
+					url: "/imgs/past_fest/halloween_1.webp",
+					alt: "Большая группа людей и косплееров в праздничном лофтовом помещении с кирпичными стенами, украшенном к Хэллоуину",
 				},
 				{
-					image: "/imgs/past_fest/halloween_2.webp",
-					imageAlt: "Три косплеера в чёрно-белых готических костюмах и масках динамично выступают или танцуют на сцене",
+					url: "/imgs/past_fest/halloween_2.webp",
+					alt: "Три косплеера в чёрно-белых готических костюмах и масках динамично выступают или танцуют на сцене",
 				},
 				{
-					image: "/imgs/past_fest/halloween_3.webp",
-					imageAlt: "Два косплеера на сцене: один в маске скелета Санса (Sans) из Undertale, другой в свитере Фриск (Frisk), стоящие в обнимку",
+					url: "/imgs/past_fest/halloween_3.webp",
+					alt: "Два косплеера на сцене: один в маске скелета Санса (Sans) из Undertale, другой в свитере Фриск (Frisk), стоящие в обнимку",
 				},
 				{
-					image: "/imgs/past_fest/halloween_4.webp",
-					imageAlt: "Тёмный круглый логотип с надписью «ИНДИ КОН», украшенный хэллоуинской тыквой и костями",
+					url: "/imgs/past_fest/halloween_4.webp",
+					alt: "Крупный план улыбающейся девушки в полосатом красно-чёрном свитере (в стиле Фредди Крюгера) и с бутафорским черепом на голове",
 				},
 				{
-					image: "/imgs/past_fest/halloween_5.webp",
-					imageAlt: "Атмосферный хэллоуинский арт в тёплых тонах с изображением старого светящегося монитора, на котором написан текст «ИНДИ КОН HALLOWEEN»",
-				},
-				{
-					image: "/imgs/past_fest/halloween_6.webp",
-					imageAlt: "Крупный план улыбающейся девушки в полосатом красно-чёрном свитере (в стиле Фредди Крюгера) и с бутафорским черепом на голове",
-				},
-				{
-					image: "/imgs/past_fest/halloween_7.webp",
-					imageAlt: "Косплеер в объёмном ростовом костюме Гримма (Grimm) из игры Hollow Knight стоит в профиль в помещении фестиваля",
+					url: "/imgs/past_fest/halloween_5.webp",
+					alt: "Косплеер в объёмном ростовом костюме Гримма (Grimm) из игры Hollow Knight стоит в профиль в помещении фестиваля",
 				},
 			],
 			review: {
@@ -85,34 +101,34 @@
 			year: "2024",
 			title: "ИНДИКОН: BIG Update",
 			subtitle: "(тут будет находиться логотип и различные узнаваемые элементы конкретного фестиваля)",
+			logo: {
+				url: "/imgs/past_fest/bigupdate_logo.webp",
+				alt: "Круглый логотип фестиваля с оранжево-жёлтой надписью «ИНДИ КОН» на голубом фоне, стилизованный под открытое круглое компьютерное окно с кнопками управления",
+			},
+			banner: {
+				url: "/imgs/past_fest/bigupdate_banner.webp",
+				alt: "Горизонтальный баннер фестиваля «ИНДИКОН» с подписью «BIG UPDATE МОСКВА», украшенный рамками в стиле компьютерных окон с персонажами инди-игр",
+			},
 			imgs: [
 				{
-					image: "/imgs/past_fest/bigupdate_1.webp",
-					imageAlt: "Общий план концертного зала фестиваля со сценой, большим экраном и толпой посетителей, освещённых синими прожекторами",
+					url: "/imgs/past_fest/bigupdate_1.webp",
+					alt: "Общий план концертного зала фестиваля со сценой, большим экраном и толпой посетителей, освещённых синими прожекторами",
 				},
 				{
-					image: "/imgs/past_fest/bigupdate_2.webp",
-					imageAlt: "Крупный план улыбающейся девушки-косплеера с чёрно-белыми волосами и маской-глазом ГЛаДОС (GLaDOS) из Portal на лице",
+					url: "/imgs/past_fest/bigupdate_2.webp",
+					alt: "Крупный план улыбающейся девушки-косплеера с чёрно-белыми волосами и маской-глазом ГЛаДОС (GLaDOS) из Portal на лице",
 				},
 				{
-					image: "/imgs/past_fest/bigupdate_3.webp",
-					imageAlt: "Девушка спикер с микрофоном выступает на фоне экрана, на котором транслируется визуальная новелла или аниме-игра",
+					url: "/imgs/past_fest/bigupdate_3.webp",
+					alt: "Девушка спикер с микрофоном выступает на фоне экрана, на котором транслируется визуальная новелла или аниме-игра",
 				},
 				{
-					image: "/imgs/past_fest/bigupdate_4.webp",
-					imageAlt: "Спикер общается со зрителями, сидящими в красных креслах лекционного зала или кинотеатра",
+					url: "/imgs/past_fest/bigupdate_4.webp",
+					alt: "Спикер общается со зрителями, сидящими в красных креслах лекционного зала или кинотеатра",
 				},
 				{
-					image: "/imgs/past_fest/bigupdate_5.webp",
-					imageAlt: "Зона со старыми ретро-компьютерами и ЭЛТ-мониторами, за которыми сидят и играют молодые люди",
-				},
-				{
-					image: "/imgs/past_fest/bigupdate_6.webp",
-					imageAlt: "Горизонтальный баннер фестиваля «ИНДИКОН» с подписью «BIG UPDATE МОСКВА», украшенный рамками в стиле компьютерных окон с персонажами инди-игр",
-				},
-				{
-					image: "/imgs/past_fest/bigupdate_7.webp",
-					imageAlt: "Круглый логотип фестиваля с оранжево-жёлтой надписью «ИНДИ КОН» на голубом фоне, стилизованный под открытое круглое компьютерное окно с кнопками управления",
+					url: "/imgs/past_fest/bigupdate_5.webp",
+					alt: "Зона со старыми ретро-компьютерами и ЭЛТ-мониторами, за которыми сидят и играют молодые люди",
 				},
 			],
 			review: {
@@ -124,34 +140,34 @@
 			year: "2025",
 			title: "ИНДИКОН: Reload",
 			subtitle: "(тут будет находиться логотип и различные узнаваемые элементы конкретного фестиваля)",
+			logo: {
+				url: "/imgs/past_fest/reload_logo.webp",
+				alt: "Круглый футуристичный логотип фестиваля с белой надписью «ИНДИ КОН» на тёмно-синем фоне со светящимися дугами",
+			},
+			banner: {
+				url: "/imgs/past_fest/reload_banner.webp",
+				alt: "Графический элемент интерфейса — синяя полоса загрузки с надписью «ПЕРЕЗАГРУЗКА» и маленькими иконками персонажей под ней",
+			},
 			imgs: [
 				{
-					image: "/imgs/past_fest/reload_1.webp",
-					imageAlt: "Широкий план концертного зала, где на сцене выступает музыкальная рок-группа перед экраном с яркой графикой",
+					url: "/imgs/past_fest/reload_1.webp",
+					alt: "Широкий план концертного зала, где на сцене выступает музыкальная рок-группа перед экраном с яркой графикой",
 				},
 				{
-					image: "/imgs/past_fest/reload_2.webp",
-					imageAlt: "Группа косплееров в разнообразных игровых костюмах (включая Роксану Вульф из FNAF) позирует на сцене во время награждения",
+					url: "/imgs/past_fest/reload_2.webp",
+					alt: "Группа косплееров в разнообразных игровых костюмах (включая Роксану Вульф из FNAF) позирует на сцене во время награждения",
 				},
 				{
-					image: "/imgs/past_fest/reload_3.webp",
-					imageAlt: "Большая деревянная вывеска с надписью «BENDY HELL» и изображением чернильного демона Бенди, подсвеченная лампочками",
+					url: "/imgs/past_fest/reload_3.webp",
+					alt: "Большая деревянная вывеска с надписью «BENDY HELL» и изображением чернильного демона Бенди, подсвеченная лампочками",
 				},
 				{
-					image: "/imgs/past_fest/reload_4.webp",
-					imageAlt: "Девушка-косплеер в розово-белом наряде Чики (Chica) из FNAF держит в руке игрушечный кекс со свечкой",
+					url: "/imgs/past_fest/reload_4.webp",
+					alt: "Девушка-косплеер в розово-белом наряде Чики (Chica) из FNAF держит в руке игрушечный кекс со свечкой",
 				},
 				{
-					image: "/imgs/past_fest/reload_5.webp",
-					imageAlt: "Атмосферная фотозона в стиле средневекового фэнтези/подземелья, где человек в доспехах стоит у деревянных ворот с черепом",
-				},
-				{
-					image: "/imgs/past_fest/reload_6.webp",
-					imageAlt: "Круглый футуристичный логотип фестиваля с белой надписью «ИНДИ КОН» на тёмно-синем фоне со светящимися дугами",
-				},
-				{
-					image: "/imgs/past_fest/reload_7.webp",
-					imageAlt: "Графический элемент интерфейса — синяя полоса загрузки с надписью «ПЕРЕЗАГРУЗКА» и маленькими иконками персонажей под ней",
+					url: "/imgs/past_fest/reload_5.webp",
+					alt: "Атмосферная фотозона в стиле средневекового фэнтези/подземелья, где человек в доспехах стоит у деревянных ворот с черепом",
 				},
 			],
 			review: {
@@ -165,6 +181,7 @@
 	const fest = $derived(pastFestivals[festI]);
 	let imgI = $state(0);
 	const img = $derived(fest.imgs[imgI]);
+	let festSection: HTMLElement;
 
 	function nextSlide() {
 		festI = (festI + 1) % pastFestivals.length;
@@ -184,40 +201,75 @@
 	}
 </script>
 
-<section>
+<section class="logos">
+	{#each pastFestivals as fest, i (i)}
+		<button
+			aria-label={`Фестиваль ${fest.title}`}
+			onclick={() => {
+				festI = i;
+				festSection.scrollIntoView({ behavior: "smooth" });
+			}}
+		>
+			<img src={asset(fest.logo.url)} alt={fest.logo.alt} loading="lazy" transition:fade={{ duration: 200 }} />
+		</button>
+	{/each}
+</section>
+
+<section bind:this={festSection}>
 	{#key festI}
 		<div transition:fade={{ duration: 200 }}>
-			<div class="controls">
-				<button class="btn" onclick={prevSlide} aria-label="Предыдущий фестиваль">
-					{@render arrow()}
-				</button>
+			<div class="image image_narrow">
+				<div class="controls">
+					<button class="btn" onclick={prevSlide} aria-label="Предыдущий фестиваль">
+						{@render arrow()}
+					</button>
 
-				<div class="controls__body festival-info">
-					<span class="year">{fest.year}</span>
-					<h3 class="title h1">{fest.title}</h3>
-					<p class="subtitle h4">{fest.subtitle}</p>
+					<div class="controls__body festival-info">
+						<!-- <span class="year">{fest.year}</span> -->
+						<!-- <h3 class="title h1">{fest.title}</h3> -->
+						<!-- <p class="subtitle h4">{fest.subtitle}</p> -->
+					</div>
+
+					<button class="btn" onclick={nextSlide} aria-label="Следующий фестиваль">
+						{@render arrow(true)}
+					</button>
+
+					<div class="controls__points">
+						<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
+						{#each pastFestivals as _, i (i)}
+							<button aria-label={`К фестивалю №${i + 1}`} class:active={i == festI} onclick={() => (festI = i)}
+							></button>
+						{/each}
+					</div>
 				</div>
 
-				<button class="btn" onclick={nextSlide} aria-label="Следующий фестиваль">
-					{@render arrow(true)}
-				</button>
+				<span class="year_label h4">{fest.year}</span>
+				<img src={asset(fest.banner.url)} alt={fest.banner.alt} loading="lazy" transition:fade={{ duration: 200 }} />
+				<!-- <div class="imageAlt showImgsAlt" transition:fade={{ duration: 200 }}>{fest.banner.alt}</div> -->
 			</div>
-
+			<h3 class="photo-tittle h3"><span>{fest.title}</span><span>ФОТОГРАФИИ</span></h3>
 			<div class="image">
 				<div class="controls">
-					<button class="btn" onclick={nextImg} aria-label="Предыдущее изображение">
+					<button class="btn" onclick={prevImg} aria-label="Предыдущее изображение">
 						{@render arrow()}
 					</button>
 
 					<div></div>
 
-					<button class="btn" onclick={prevImg} aria-label="Следующее изображение">
+					<button class="btn" onclick={nextImg} aria-label="Следующее изображение">
 						{@render arrow(true)}
 					</button>
+
+					<div class="controls__points">
+						<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
+						{#each fest.imgs as _, i (i)}
+							<button aria-label={`К фото №${i + 1}`} class:active={i == imgI} onclick={() => (imgI = i)}></button>
+						{/each}
+					</div>
 				</div>
 				{#key imgI}
-					<img src={asset(img.image)} alt={img.imageAlt} loading="lazy" transition:fade={{ duration: 200 }} />
-					<div class="imageAlt showImgsAlt" transition:fade={{ duration: 200 }}>{img.imageAlt}</div>
+					<img src={asset(img.url)} alt={img.alt} loading="lazy" transition:fade={{ duration: 200 }} />
+					<!-- <div class="imageAlt showImgsAlt" transition:fade={{ duration: 200 }}>{img.alt}</div> -->
 				{/key}
 			</div>
 
@@ -258,6 +310,27 @@
 		grid-area: el;
 	}
 
+	.logos {
+		--_cols: 4;
+		grid-template-columns: repeat(var(--_cols), 1fr);
+		width: fit-content;
+		gap: 1em;
+		justify-items: center;
+		margin: 3em auto;
+	}
+	.logos > * {
+		grid-area: unset;
+	}
+	@media screen and (max-width: 700px) {
+		.logos {
+			--_cols: 2;
+		}
+	}
+
+	.logos img {
+		height: clamp(9.375rem, 4.6875rem + 12.5vw, 15.625rem);
+	}
+
 	.controls {
 		max-width: 1700px;
 		margin: clamp(5rem, 1.7rem + 13.2vw, 13.25rem) auto;
@@ -271,6 +344,34 @@
 		flex-grow: 1;
 	}
 
+	.controls__points {
+		position: absolute;
+		bottom: 0.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 0.5em;
+		background-color: var(--theme-main-bg);
+		transition: var(--theme-transition);
+		padding: 0.5em 1em;
+		border-radius: 0.5rem;
+	}
+	.controls__points > * {
+		width: 0.6em;
+		height: 0.6em;
+		background-color: var(--theme-main-text);
+		border-radius: 100%;
+		transition: var(--theme-transition);
+	}
+	@media (pointer: fine) {
+		.controls__points > *:hover {
+			scale: 1.25;
+		}
+	}
+	.controls__points .active {
+		scale: 0.75;
+	}
+
 	.festival-info {
 		text-align: center;
 		display: flex;
@@ -281,6 +382,17 @@
 	.year {
 		font-weight: 900;
 		font-size: clamp(1.125rem, -0.225rem + 5.4vw, 4.5rem);
+	}
+	.year_label {
+		position: absolute;
+		top: 0.5em;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: var(--theme-main-bg);
+		color: var(--theme-main-text);
+		transition: var(--theme-transition);
+		padding: 0.1em 0.5em;
+		border-radius: 0.5em;
 	}
 	.subtitle {
 		max-width: 1200px;
@@ -303,10 +415,21 @@
 		transform: scaleX(-1);
 	}
 
+	.photo-tittle {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		--_m: clamp(5rem, 1.7rem + 13.2vw, 13.25rem);
+		margin: calc(0.75 * var(--_m)) 0 calc(-0.75 * var(--_m)) 0;
+	}
+
 	.image {
 		position: relative;
 		width: 100%;
 		height: clamp(28rem, 19rem + 35vw, 55rem);
+	}
+	.image_narrow {
+		height: calc(0.75 * clamp(28rem, 19rem + 35vw, 55rem));
 	}
 	.image .controls {
 		height: 100%;

@@ -10,6 +10,10 @@ export function textWave(
 	node.style.setProperty("--dur", `${duration}`);
 	node.style.setProperty("--d", `${delay}`);
 	let i = 0;
-	node.innerHTML = node.innerHTML.replace(/(.)/g, (ch) => `<span style="--d:${i++ * delay}">${ch}</span>`);
+	node.innerHTML = node.innerHTML
+		.split(" ")
+		.map((word) => word.replace(/(.)/g, (ch) => `<span style="--d:${i++ * delay}">${ch}</span>`))
+		.map((word) => `<span>${word}</span>`)
+		.join(" ");
 	node.classList.add("textWave");
 }

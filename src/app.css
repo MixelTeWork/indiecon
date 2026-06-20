@@ -149,6 +149,9 @@ button {
 }
 
 .textWave > span {
+	white-space: pre;
+}
+.textWave > span > span {
 	display: inline-block;
 	white-space: pre;
 	animation: text-wave calc(1s * var(--dur, 2)) linear infinite alternate;

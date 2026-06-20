@@ -50,4 +50,10 @@
 		padding-top: 12em;
 		padding-bottom: clamp(1.5rem, -2.5rem + 16vw, 11.5rem);
 	}
+
+	@media (max-width: 330px) {
+		h1 {
+			font-size: 2.25rem;
+		}
+	}
 </style>

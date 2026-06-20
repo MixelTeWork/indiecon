@@ -1,8 +1,8 @@
 <script>
 	import { textWave } from "$lib/utils/textWave";
-
 </script>
-<section use:textWave>Скоро тут будет карта</section>
+
+<section><div use:textWave>Скоро тут будет карта</div></section>
 
 <style>
 	section {
@@ -16,5 +16,9 @@
 		align-items: center;
 		justify-content: center;
 		clip-path: polygon(0 clamp(0px, -32px + 8vw, 64px), 100% 0, 100% 100%, 0 100%);
+		overflow: hidden;
+	}
+	div {
+		text-align: center;
 	}
 </style>
