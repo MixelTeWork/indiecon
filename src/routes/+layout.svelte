@@ -24,6 +24,7 @@
 	<title>{title}</title>
 	<meta name="description" content={description} />
 	<link rel="canonical" href={url} />
+	<link href="/404" />
 	<!-- <meta name="theme-color" content="#a52a2a" /> -->
 
 	<meta property="og:title" content={title} />
