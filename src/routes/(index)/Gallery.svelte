@@ -98,9 +98,6 @@
 		.content {
 			flex-direction: column;
 		}
-		p {
-			text-align: center;
-		}
 	}
 
 	@keyframes moveLeft {

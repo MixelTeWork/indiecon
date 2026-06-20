@@ -217,6 +217,9 @@
 			flex-direction: column;
 			gap: 6rem;
 		}
+		.container > :first-child p {
+			text-align: left;
+		}
 
 		.content-about {
 			color: inherit;

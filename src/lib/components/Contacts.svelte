@@ -76,7 +76,7 @@
 			gap: 4em;
 		}
 		.contacts {
-			text-align: center;
+			/* text-align: center; */
 		}
 	}
 </style>

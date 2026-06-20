@@ -153,9 +153,5 @@
 			flex-direction: column;
 			padding: 0 1.5rem;
 		}
-
-		.description {
-			text-align: center;
-		}
 	}
 </style>

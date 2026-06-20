@@ -56,7 +56,7 @@
 		section {
 			background-color: var(--theme-main-bg);
 			color: var(--theme-main-text);
-			text-align: center;
+			/* text-align: center; */
 		}
 		.hero p {
 			font-weight: inherit;

@@ -49,7 +49,7 @@
 
 	@media screen and (max-width: 900px) {
 		.intro-text {
-			text-align: center;
+			/* text-align: center; */
 		}
 	}
 	@media screen and (max-width: 380px) {

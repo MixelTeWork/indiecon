@@ -43,7 +43,7 @@
 		section {
 			flex-direction: column;
 		}
-		div {
+		h2 {
 			text-align: center;
 		}
 	}
