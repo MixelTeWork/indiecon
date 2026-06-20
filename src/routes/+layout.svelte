@@ -6,6 +6,7 @@
 	import "$lib/fonts/fonts.css";
 	import Header from "$lib/components/Header.svelte";
 	import Footer from "$lib/components/Footer.svelte";
+	import { resolve } from "$app/paths";
 	import { page } from "$app/state";
 
 	let { children } = $props();
@@ -24,7 +25,7 @@
 	<title>{title}</title>
 	<meta name="description" content={description} />
 	<link rel="canonical" href={url} />
-	<link href="/404" />
+	<link href={resolve("/404")} />
 	<!-- <meta name="theme-color" content="#a52a2a" /> -->
 
 	<meta property="og:title" content={title} />
