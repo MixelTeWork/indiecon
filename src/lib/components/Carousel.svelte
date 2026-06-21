@@ -93,7 +93,13 @@
 			alt: "Обложка игры Numeral Strike с мультяшными воинами и монстром",
 			text: "Numeral Strike - это пошаговый рогалик, где сражения происходят на поле чисел. Доступна демо версия игры, при желании на Индиконе будет доступна мобильная версия.\nСсылка на игру: [store.steampowered.com/app/370862...](https://store.steampowered.com/app/370862...)\nСсылка на ТГ разработчика: [t.me/ost_sergey](https://t.me/ost_sergey)",
 		},
-	];
+	].map((item, i) => ({
+		...item,
+		title: "???",
+		text: "Скоро тут появится кто-то очень крутой. Хом-ном",
+		img: asset(`/imgs/guests/guest_placeholder_${Math.floor(Math.abs(Math.sin(i * 9301 + 49297 + 4)) * 3) + 1}.webp`),
+		alt: "Хомяк скрывающий гостя",
+	}));
 
 	let pageWidth = $state(0);
 

@@ -4,7 +4,7 @@
 	import Button from "$lib/components/button/Button.svelte";
 
 	const props: { status?: number } = $props();
-	const status = $derived(props.status ?? page.state);
+	const status = $derived(props.status ?? page.status);
 </script>
 
 <section>
