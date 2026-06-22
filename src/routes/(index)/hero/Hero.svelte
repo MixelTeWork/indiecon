@@ -1,4 +1,11 @@
+<script module>
+	import { clamp } from "$lib/utils/clamp";
+	import { ReactiveResizeValue } from "$lib/utils/reactiveResizeValue.svelte";
+	const scale = new ReactiveResizeValue(() => clamp(0.5, window.innerHeight / window.innerWidth, 2), 1);
+</script>
+
 <script>
+	scale.registerOnMount();
 	import { resolve } from "$app/paths";
 	import Button from "$lib/components/button/Button.svelte";
 	import tg from "$lib/assets/tg.svg";
@@ -14,7 +21,7 @@
 	import Label from "./label/Label.svelte";
 </script>
 
-<section>
+<section style:--hero-scale={scale.value}>
 	<img class="back" src={back} alt="" />
 	<div class="hero-container">
 		<div class="hero">
@@ -69,7 +76,8 @@
 		align-items: center;
 		overflow: hidden;
 		padding-bottom: 5rem;
-		--s: clamp(0.5, calc(1vh / 1vw), 2);
+		/* --s: clamp(0.5, calc(1vh / 1vw), 2); */
+		--s: var(--hero-scale);
 		--sn: calc((var(--s) - 0.5) / 1.5);
 	}
 	.back {
@@ -180,7 +188,7 @@
 	}
 
 	.content-details {
-		font-size: 0.8em;
+		/* font-size: 0.8em; */
 		padding: 0.5em;
 		margin: -0.5em;
 		border-radius: 0.5em;

@@ -1,9 +1,16 @@
+<script module>
+	import { clamp } from "$lib/utils/clamp";
+	import { ReactiveResizeValue } from "$lib/utils/reactiveResizeValue.svelte";
+	const scale = new ReactiveResizeValue(() => clamp(0.7, window.innerWidth / 600, 1), 0.7);
+</script>
+
 <script lang="ts">
 	/* eslint-disable svelte/no-navigation-without-resolve */
 	import back from "./back.svg";
 	import back2 from "./back2.svg";
 	import arrow from "./arrow.svg";
 	import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
+	scale.registerOnMount();
 
 	const {
 		children,
@@ -29,6 +36,7 @@
 	<a
 		{href}
 		{...props}
+		style:--button-scale={scale.value}
 		style:--back={backUrl}
 		style:--size={size}
 		class={[className, "btn", addArrow && "btn_arrow", small && "btn_small"]}
@@ -41,6 +49,7 @@
 {:else}
 	<button
 		{...props}
+		style:--button-scale={scale.value}
 		style:--back={backUrl}
 		style:--size={size}
 		class={[className, "btn", addArrow && "btn_arrow", small && "btn_small"]}
@@ -54,6 +63,8 @@
 
 <style>
 	.btn {
+		/* --_s: clamp(0.7, 100vw / 600px, 1); */
+		--_s: var(--button-scale);
 		position: relative;
 		display: inline-block;
 		border: 30px solid transparent;
@@ -72,7 +83,7 @@
 		filter: invert(1);
 	}
 	.btn_arrow {
-		margin-right: calc(7rem * clamp(0.7, 100vw / 600px, 1));
+		margin-right: calc(7rem * var(--_s));
 	}
 	.btn_small {
 		padding: 0.5rem 1rem;
@@ -83,7 +94,7 @@
 		position: absolute;
 		top: 50%;
 		right: -20px;
-		transform: translate(100%, -50%) scale(clamp(0.7, 100vw / 600px, 1));
+		transform: translate(100%, -50%) scale(var(--_s));
 		transform-origin: left;
 	}
 	.white_arrow {

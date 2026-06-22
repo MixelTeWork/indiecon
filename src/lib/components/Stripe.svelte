@@ -1,5 +1,12 @@
+<script module>
+	import { clamp } from "$lib/utils/clamp";
+	import { ReactiveResizeValue } from "$lib/utils/reactiveResizeValue.svelte";
+	const scale = new ReactiveResizeValue(() => clamp(0, (window.innerWidth - 700) / 400, 1), 0.5);
+</script>
+
 <script lang="ts">
 	import type { Snippet } from "svelte";
+	scale.registerOnMount();
 
 	const {
 		children,
@@ -20,7 +27,7 @@
 	} = $props();
 </script>
 
-<h2 class={{ reverse, secondary, centerY, large, h3: 1 }} style:top style:bottom>
+<h2 class={{ reverse, secondary, centerY, large, h3: 1 }} style:top style:bottom style:--stripe-scale={scale.value}>
 	<span>{@render children()}</span>
 </h2>
 
@@ -55,6 +62,7 @@
 	}
 	.secondary span,
 	.large span {
-		font-size: calc(1.2em - 0.2em * clamp(0, (100vw - 700px) / 400px, 1));
+		/* font-size: calc(1.2em - 0.2em * clamp(0, (100vw - 700px) / 400px, 1)); */
+		font-size: calc(1.2em - 0.2em * var(--stripe-scale));
 	}
 </style>

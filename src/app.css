@@ -68,6 +68,12 @@ body {
 	font-size: clamp(0.875rem, 0.8rem + 0.37vw, 1.04rem);
 	font-weight: 500;
 	line-height: 1.2;
+
+	--safe-area-top: env(safe-area-inset-top, 0px);
+	/* padding-top: env(safe-area-inset-top); */
+	/* padding-bottom: env(safe-area-inset-bottom); */
+	/* padding-left: env(safe-area-inset-left); */
+	/* padding-right: env(safe-area-inset-right); */
 }
 
 .h1 {

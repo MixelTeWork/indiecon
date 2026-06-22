@@ -73,6 +73,7 @@
 
 <style>
 	header {
+		--header-height: calc(90px + var(--safe-area-top));
 		position: sticky;
 		top: 0;
 		z-index: 10;
@@ -80,7 +81,8 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 1rem clamp(2rem, 5.5vw, 6rem);
-		height: 90px;
+		padding-top: max(var(--safe-area-top), 1rem);
+		height: var(--header-height);
 		background-color: var(--theme-main-bg);
 		transition: var(--theme-transition);
 	}
@@ -133,7 +135,7 @@
 
 	@media screen and (max-width: 900px) {
 		header {
-			height: 80px;
+			--header-height: calc(80px + var(--safe-area-top));
 		}
 		.logo img {
 			height: 24px;
@@ -150,7 +152,7 @@
 			left: 0;
 			top: 100%;
 			width: 100%;
-			height: calc(100vh - 80px);
+			height: calc(100vh - var(--header-height));
 			font-size: 1.25rem;
 			max-width: none;
 			background-color: var(--theme-main-bg);

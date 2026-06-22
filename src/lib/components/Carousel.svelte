@@ -166,6 +166,7 @@
 		--bw: clamp(2px, 1.2px + 0.2vw, 4px);
 		--p: clamp(0.8125rem, 0.5875rem + 0.9vw, 1.375rem);
 		--sep: clamp(2rem, 1.3rem + 2.8vw, 3.75rem);
+		width: 100%;
 		max-width: 12em;
 		border: var(--bw) solid currentColor;
 		padding: var(--p);

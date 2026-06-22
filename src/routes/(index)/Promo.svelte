@@ -1,5 +1,12 @@
+<script module>
+	import { clamp } from "$lib/utils/clamp";
+	import { ReactiveResizeValue } from "$lib/utils/reactiveResizeValue.svelte";
+	const scale = new ReactiveResizeValue(() => 1 - clamp(0, (window.innerWidth - 400) / 400, 1), 0);
+</script>
+
 <script lang="ts">
 	import Stripe from "$lib/components/Stripe.svelte";
+	scale.registerOnMount();
 
 	let circle: HTMLDivElement;
 	let coords: { x: number; y: number } = $state({ x: 0, y: 0 });
@@ -31,7 +38,7 @@
 
 <svelte:window onmousemove={handleMouseMove} onscroll={handleScroll} />
 
-<section>
+<section style:--promo-scale={scale.value}>
 	<div class="clip">
 		<div class="text h3">
 			<div class="text__left"></div>
@@ -64,7 +71,8 @@
 		position: relative;
 		padding-block: 4rem;
 		overflow: hidden;
-		--m: (1 - clamp(0, (100vw - 400px) / 400px, 1));
+		/* --m: (1 - clamp(0, (100vw - 400px) / 400px, 1)); */
+		--m: var(--promo-scale);
 	}
 	.clip {
 		position: relative;
