@@ -12,7 +12,7 @@
 	<h2 class="h3 title">Прошедшие фестивали</h2>
 
 	<div class="hero">
-		<span class="date h4">12.08.2025</span>
+		<!-- <span class="date h4">12.08.2025</span> -->
 		<img src={asset("/imgs/past_fest/hero_2025.webp")} alt="Четыре улыбающихся молодых человека с бейджами на шее стоят в обнимку на сцене на тёмном фоне" loading="lazy" />
 	</div>
 
