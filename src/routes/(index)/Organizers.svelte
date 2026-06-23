@@ -76,7 +76,7 @@
 	.grid {
 		display: grid;
 		width: 100%;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(2, auto);
 		grid-template-areas:
 			"p1 p2 p3 p4"
@@ -99,6 +99,7 @@
 
 	.grid__card img {
 		height: 100%;
+		width: fit-content;  /* fix issue in webkit browsers */
 		aspect-ratio: 0.723;
 		object-fit: cover;
 	}
@@ -126,7 +127,7 @@
 
 	@media screen and (max-width: 900px) {
 		.grid {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(3, auto);
 			grid-template-areas:
 				"p1 p2"
