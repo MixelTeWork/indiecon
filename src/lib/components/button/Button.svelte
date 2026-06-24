@@ -97,6 +97,7 @@
 		transform: translate(100%, -50%) scale(var(--_s));
 		transform-origin: left;
 	}
+	:global(.dark) .arrow,
 	.white_arrow {
 		filter: invert(1);
 	}

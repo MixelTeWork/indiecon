@@ -233,7 +233,7 @@
 			color: inherit;
 		}
 
-		section :global(.btn-info) :global(img) {
+		:root:not(:global(.dark)) section :global(.btn-info) :global(img) {
 			filter: none !important;
 		}
 
