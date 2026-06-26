@@ -2,13 +2,13 @@
 	const tickets = [
 		{
 			name: "Standard edition",
-			price: "2 200 ₽",
+			price: "2 350 ₽",
 			url: "https://vk.com/market/product/bilet-quotstandard-editionquot-220927851-13484258",
 			features: ["Вход на мероприятие", "Физическая Билет-Открытка"],
 		},
 		{
 			name: "Deluxe edition",
-			price: "3 300 ₽",
+			price: "3 500 ₽",
 			url: "https://vk.com/market/product/bilet-quotdeluxe-editionquot-220927851-13484276",
 			features: [
 				"Вход на мероприятие",
@@ -17,7 +17,7 @@
 		},
 		{
 			name: "Ultimate edition",
-			price: "5 000 ₽",
+			price: "5 250 ₽",
 			url: "https://vk.com/market/product/bilet-quotultimate-editionquot-220927851-13484305",
 			features: [
 				"Вход на мероприятие",

@@ -22,7 +22,8 @@
 
 		const clamp = (x: number) => Math.max(Math.min(x, 1), -1);
 
-		coords = { x: clamp(px - cx) * 15, y: clamp(py - cy) * 10 };
+		// coords = { x: clamp(px - cx) * 15, y: clamp(py - cy) * 10 };
+		coords = { x: clamp(px - cx) * 35, y: clamp(py - cy) * 30 };
 	}
 
 	function handleMouseMove(e: MouseEvent) {
@@ -167,8 +168,11 @@
 	}
 
 	@media (pointer: fine) {
-		.circle__inner1 {
+		/* .circle__inner1 {
 			transform: translate(-50%, -50%) translateX(calc(-25% * var(--m))) translate(var(--dx), var(--dy));
+		} */
+		.circle__inner1__inner {
+			transform: translate(-50%, -50%) translate(var(--dx), var(--dy));
 		}
 	}
 </style>
