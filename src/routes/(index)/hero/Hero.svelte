@@ -255,7 +255,7 @@
 			font-size: 1.5em;
 		}
 	}
-	@media screen and (((min-width: 901px) and (max-width: 2000px)) or ((min-width: 2000px) and (max-height: 900px))) {
+	@media screen and (901px <= width <= 2000px), screen and (width >= 2000px) and (height <= 900px) {
 		.blue {
 			background: linear-gradient(35deg, #1919cf 80%, transparent 85%);
 			padding: 0 0 0.5em 0.5em;
@@ -264,7 +264,7 @@
 			border-bottom-right-radius: 0.5em;
 		}
 	}
-	@media screen and (min-width: 901px) and ((max-height: 640px) or (max-aspect-ratio: 0.9)) {
+	@media screen and (width >= 901px) and (height <= 640px), screen and (width >= 901px) and (aspect-ratio <= 0.9) {
 		.blueTitle {
 			text-shadow:
 				-0.05em -0.05em 0 #1919cf,
