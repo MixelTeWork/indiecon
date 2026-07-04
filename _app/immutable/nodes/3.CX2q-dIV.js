@@ -1,1 +1,0 @@
-import"../chunks/DUtt_esF.js";import"../chunks/B8UK1oE5.js";import{t as e}from"../chunks/4lzMunXN.js";function t(t){e(t,{status:404})}export{t as component};
