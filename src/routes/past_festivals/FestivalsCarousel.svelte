@@ -312,7 +312,7 @@
 		grid-area: el;
 	}
 
-	.logos {
+	/* .logos {
 		--_cols: 4;
 		grid-template-columns: repeat(var(--_cols), 1fr);
 		width: fit-content;
@@ -331,7 +331,7 @@
 
 	.logos img {
 		height: clamp(9.375rem, 4.6875rem + 12.5vw, 15.625rem);
-	}
+	} */
 
 	.controls {
 		max-width: 1700px;
@@ -385,7 +385,7 @@
 		font-weight: 900;
 		font-size: clamp(1.125rem, -0.225rem + 5.4vw, 4.5rem);
 	}
-	.year_label {
+	/* .year_label {
 		position: absolute;
 		top: 0.5em;
 		left: 50%;
@@ -398,7 +398,7 @@
 	}
 	.subtitle {
 		max-width: 1200px;
-	}
+	} */
 
 	.btn {
 		padding: 0.5rem;
@@ -417,13 +417,13 @@
 		transform: scaleX(-1);
 	}
 
-	.photo-tittle {
+	/* .photo-tittle {
 		text-align: center;
 		display: flex;
 		flex-direction: column;
 		--_m: clamp(5rem, 1.7rem + 13.2vw, 13.25rem);
 		margin: calc(0.75 * var(--_m)) 0 calc(-0.75 * var(--_m)) 0;
-	}
+	} */
 
 	.logo {
 		width: 100%;
@@ -465,12 +465,12 @@
 		height: 100%;
 		object-fit: cover;
 	}
-	.imageAlt {
+	/* .imageAlt {
 		position: absolute;
 		bottom: -1em;
 		left: 50%;
 		transform: translate(-50%, 100%);
-	}
+	} */
 
 	.review {
 		margin: clamp(5rem, 1.7rem + 13.2vw, 13.25rem) auto;

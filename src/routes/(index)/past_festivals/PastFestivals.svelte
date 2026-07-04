@@ -66,13 +66,13 @@
 		overflow: hidden;
 	}
 
-	.date {
+	/* .date {
 		position: absolute;
 		top: clamp(1.5rem, 0.1rem + 5.6vw, 5rem);
 		left: clamp(1.5rem, 0.1rem + 5.6vw, 5rem);
 		color: #fff;
 		z-index: 2;
-	}
+	} */
 
 	.hero img {
 		width: 100%;
