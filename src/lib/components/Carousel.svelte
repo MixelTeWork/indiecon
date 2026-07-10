@@ -28,9 +28,9 @@
 	].map((item, i) => ({
 		...item,
 		title: "???",
-		text: "Скоро тут появится кто-то очень крутой. Хом-ном",
-		img: asset(`/imgs/guests/guest_placeholder_${Math.floor(Math.abs(Math.sin(i * 9301 + 49297 + 4)) * 3) + 1}.webp`),
-		alt: "Хомяк скрывающий гостя",
+		text: "Скоро тут появится кто-то очень крутой",
+		img: asset(`/imgs/guests/question_mark_${Math.floor(Math.abs(Math.sin(i * 12.989819) * 43758.5453 % 1) * 4) + 1}.webp`),
+		alt: "Вопросительный знак",
 	}));
 
 	let pageWidth = $state(0);

@@ -12,6 +12,7 @@
 		<a href="mailto:{email}">{email}</a>
 		<!-- <a href="tel:{phone.replace(/[^0-9+]/g, '')}">{phone}</a> -->
 		<div class="mt">14+</div>
+		<p class="mt sm">ИП Липатов Андрей Дмитриевич<br />ИНН: 972900101036</p>
 	</div>
 
 	<a class="logo" href={resolve("/")}>
@@ -46,6 +47,10 @@
 
 	.mt {
 		margin-top: 1.2em;
+	}
+
+	.sm {
+		font-size: 0.875em;
 	}
 
 	.logo img {
