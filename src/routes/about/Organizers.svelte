@@ -36,7 +36,7 @@
 			name: "КСЕНИЯ МАЗУР",
 			role: "Организатор сцены",
 			bg: "#D81FFF",
-			image: "/imgs/team/ksenia.webp",
+			image: "/imgs/team/ksenia_v2.webp",
 		},
 	];
 </script>
