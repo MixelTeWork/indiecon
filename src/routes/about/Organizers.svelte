@@ -69,7 +69,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: "txt img";
-		min-height: 60vh;
+		min-height: min(60vh, 700px);
 	}
 
 	.info {
