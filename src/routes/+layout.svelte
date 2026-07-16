@@ -8,6 +8,7 @@
 	import Footer from "$lib/components/Footer.svelte";
 	import { resolve } from "$app/paths";
 	import { page } from "$app/state";
+	import CookieBanner from "$lib/components/CookieBanner.svelte";
 
 	let { children } = $props();
 	const url = $derived(new URL(page.url.pathname, PUBLIC_BASE_URL).href);
@@ -57,6 +58,8 @@
 
 	<Footer />
 </div>
+
+<CookieBanner />
 
 <style>
 	.app {

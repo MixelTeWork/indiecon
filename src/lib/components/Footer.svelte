@@ -13,6 +13,7 @@
 		<!-- <a href="tel:{phone.replace(/[^0-9+]/g, '')}">{phone}</a> -->
 		<div class="mt">14+</div>
 		<p class="mt sm">ИП Липатов Андрей Дмитриевич<br />ИНН: 972900101036</p>
+		<a class="mt sm" href={resolve("/privacy-policy")}>Политика в отношении обработки персональных данных</a>
 	</div>
 
 	<a class="logo" href={resolve("/")}>

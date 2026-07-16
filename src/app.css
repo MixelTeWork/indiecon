@@ -10,6 +10,7 @@
 :root {
 	--theme-main-bg: var(--color-white);
 	--theme-main-text: var(--color-black);
+	--theme-main-link: blue;
 
 	--theme-primary-bg: var(--color-blue);
 	--theme-primary-text: var(--color-white);
@@ -26,6 +27,7 @@
 .dark {
 	--theme-main-bg: var(--color-black);
 	--theme-main-text: var(--color-white);
+	--theme-main-link: #00ffff;
 
 	--theme-primary-bg: var(--color-blue);
 	--theme-primary-text: var(--color-white);
@@ -65,6 +67,7 @@ body {
 	background-color: var(--theme-main-bg);
 	transition: var(--theme-transition);
 	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	text-decoration-skip-ink: none;
 	font-size: clamp(0.875rem, 0.8rem + 0.37vw, 1.04rem);
 	font-weight: 500;
 	line-height: 1.2;
