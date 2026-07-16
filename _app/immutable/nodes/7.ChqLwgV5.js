@@ -1,1 +1,0 @@
-import{E as e,w as t}from"../chunks/DUtt_esF.js";import"../chunks/B8UK1oE5.js";var n=e(`<h1 class="h1 svelte-97z5rd">Скоро откроется</h1>`);function r(e){t(e,n())}export{r as component};
