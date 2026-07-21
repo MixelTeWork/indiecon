@@ -7,7 +7,7 @@
 		{ id: "p2", name: "САВВАТИЙ SAVVATOZ", bg: "#ff3f25", img: "/imgs/team/savvatiy.webp" },
 		{ id: "p3", name: "MINI WOLFI", bg: "#ffbf00", img: "/imgs/team/wolfi.webp" },
 		{ id: "p4", name: "МИША UVB", bg: "#000000", img: "/imgs/team/misha.webp" },
-		{ id: "p5", name: "КСЕНИЯ МАЗУР", bg: "#d81fff", img: "/imgs/team/ksenia_v2.webp" },
+		{ id: "p5", name: "КСЕНИЯ МАЗУР", bg: "#d81fff", img: "/imgs/team/ksenia_v3.webp" },
 		{ id: "p6", name: "СВЕТА SV_PAK", bg: "#00c3ff", img: "/imgs/team/sveta.webp" },
 	];
 </script>
