@@ -176,6 +176,10 @@
 	{/if}
 </section>
 
+<div class="text">
+	<p>И многие другие!</p>
+</div>
+
 {#snippet arrow(flip = false)}
 	<svg width="55" height="82" viewBox="0 0 55 82" fill="none" xmlns="http://www.w3.org/2000/svg" class={{ flip }}>
 		<path d="M53.3689 1.18555L2.3689 39.4886L50.0071 80.1855" stroke="currentColor" stroke-width="3" />
@@ -325,5 +329,16 @@
 	}
 	svg.flip {
 		transform: scaleX(-1);
+	}
+
+	.text {
+		margin-top: -2rem;
+		padding: 0em 4em;
+	}
+	.text p {
+		font-size: clamp(1.375rem, 1.025rem + 1.4vw, 2.25rem);
+		max-width: 725px;
+		margin: auto;
+		text-align: center;
 	}
 </style>
