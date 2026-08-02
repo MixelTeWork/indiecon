@@ -3,8 +3,9 @@
 	import Contacts from "$lib/components/Contacts.svelte";
 	import Stripe from "$lib/components/Stripe.svelte";
 	import Map from "./Map.svelte";
-	// import TimeTable from "./TimeTable.svelte";
-	import TimeTableSoon from "./TimeTableSoon.svelte";
+	import TimeTable from "./TimeTable.svelte";
+	import TimeTableLive from "./TimeTableLive.svelte";
+	// import TimeTableSoon from "./TimeTableSoon.svelte";
 </script>
 
 <h1 class="h1">Информация</h1>
@@ -16,8 +17,18 @@
 	<Stripe centerY large>Расписание</Stripe>
 </div>
 
-<!-- <TimeTable /> -->
-<TimeTableSoon />
+<div class="timetable">
+	<div class="borderedCard">
+		<span>Ранний вход - 11:00</span>
+		<span>Вход - 12:00</span>
+		<span>Окончание мероприятия - 20:00</span>
+	</div>
+</div>
+
+<TimeTableLive festId={106} title="Главная сцена" />
+<TimeTableLive festId={111} title="Малая Сцена" />
+<TimeTable />
+<!-- <TimeTableSoon /> -->
 
 <Map />
 
@@ -49,6 +60,21 @@
 		overflow: hidden;
 		padding-top: 12em;
 		padding-bottom: clamp(1.5rem, -2.5rem + 16vw, 11.5rem);
+	}
+
+	.timetable {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 1em;
+	}
+	.timetable > div {
+		margin-bottom: 2.5rem;
+		padding: 1em;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2em;
+		justify-content: space-evenly;
 	}
 
 	@media (max-width: 330px) {
