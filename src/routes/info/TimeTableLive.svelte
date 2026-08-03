@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { tick } from "svelte";
-	import { dev } from "$app/environment";
+	// import { dev } from "$app/environment";
 
 	interface ScheduleItem {
 		id: number;
@@ -35,7 +35,8 @@
 	const scheduleDate = "2026-08-15";
 	const days: DayConfig[] = [{ id: 0, label: "День 1" }];
 	const refreshMs = 5000;
-	const apiBase = !dev ? "/api/v1/shows" : "https://indiecon-shedule-proxy.artyombkru048.workers.dev/";
+	// const apiBase = !dev ? "/api/v1/shows" : "https://indiecon-shedule-proxy.artyombkru048.workers.dev/";
+	const apiBase = "https://indiecon-shedule-proxy.artyombkru048.workers.dev/";
 
 	let currentDay = $derived(days[0]?.id ?? 0);
 	let items = $state([] as ScheduleItem[]);
