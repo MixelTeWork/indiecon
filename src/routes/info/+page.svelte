@@ -3,6 +3,7 @@
 	import Contacts from "$lib/components/Contacts.svelte";
 	import Stripe from "$lib/components/Stripe.svelte";
 	import Map from "./Map.svelte";
+	// import MapSoon from "./MapSoon.svelte";
 	import TimeTable from "./TimeTable.svelte";
 	import TimeTableLive from "./TimeTableLive.svelte";
 	// import TimeTableSoon from "./TimeTableSoon.svelte";
@@ -30,6 +31,7 @@
 <TimeTable />
 <!-- <TimeTableSoon /> -->
 
+<!-- <MapSoon /> -->
 <Map />
 
 <Contacts />
