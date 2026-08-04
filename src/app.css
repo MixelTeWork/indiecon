@@ -10,6 +10,7 @@
 :root {
 	--theme-main-bg: var(--color-white);
 	--theme-main-text: var(--color-black);
+	--theme-main-text-muted: #888;
 	--theme-main-link: blue;
 
 	--theme-primary-bg: var(--color-blue);
@@ -27,6 +28,7 @@
 .dark {
 	--theme-main-bg: var(--color-black);
 	--theme-main-text: var(--color-white);
+	--theme-main-text-muted: #777;
 	--theme-main-link: #00ffff;
 
 	--theme-primary-bg: var(--color-blue);

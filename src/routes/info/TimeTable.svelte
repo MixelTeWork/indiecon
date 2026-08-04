@@ -23,16 +23,16 @@
 		},
 		{
 			time: "16:00",
-			desc: "«Важность силуэта персонажа в разработке концепт арта для игры» Анастасия Чеснокова (alayne) - разработчик, 2d концепт-артист",
+			desc: "«Важность силуэта персонажа в разработке концепт арта для игры» Анастасия Чеснокова (alayne) – разработчик, 2d концепт-артист",
 		},
 		{ time: "Зона автограф сессий" },
 		{ title: "13:00", desc: "Антикек" },
 		{ title: "13:30", desc: "Акр" },
-		{ title: "14:00", desc: "JFVoice, FolkStudio, SiRus, Natsu Smeh, Neykas) - Максвелл" },
-		{ title: "15:00", desc: "Сумочкин - Ntime" },
-		{ title: "16:00", desc: "NDRecords - Braindead project - Бискас" },
-		{ title: "17:00", desc: "WonderNope - DTV" },
-		{ title: "18:00", desc: "sad.pigeon**,** Aliazo, Grechka - ИнкБлот" },
+		{ title: "14:00", desc: "JFVoice, FolkStudio, SiRus, Natsu Smeh, Neykas, FireVer) – Максвелл" },
+		{ title: "15:00", desc: "Сумочкин – Ntime" },
+		{ title: "16:00", desc: "NDRecords – Braindead project – Бискас" },
+		{ title: "17:00", desc: "WonderNope – DTV" },
+		{ title: "18:00", desc: "Клайп, sad.pigeon, Grechka, Aliazo, Grechka – ИнкБлот" },
 		{ time: "Турниры", desc: "Для участия в турнирах нужно заранее подойти на зону и записаться" },
 		{ time: "Зона настолок" },
 		{ title: "13:30", desc: "Повелители Токио" },
@@ -113,12 +113,14 @@
 	.item__time {
 		font-size: 1.125em;
 		font-weight: 900;
+		font-variant-numeric: tabular-nums;
 	}
 
 	.item__title {
 		font-size: 0.78em;
 		font-weight: 700;
 		white-space: nowrap;
+		font-variant-numeric: tabular-nums;
 	}
 
 	.item_sm .item__title::after {

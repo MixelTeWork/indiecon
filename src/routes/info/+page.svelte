@@ -20,9 +20,9 @@
 
 <div class="timetable">
 	<div class="borderedCard">
-		<span>Ранний вход - 11:00</span>
-		<span>Вход - 12:00</span>
-		<span>Окончание мероприятия - 20:00</span>
+		<span>Ранний вход – 11:00</span>
+		<span>Вход – 12:00</span>
+		<span>Окончание мероприятия – 20:00</span>
 	</div>
 </div>
 
