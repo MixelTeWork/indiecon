@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { textWave } from "$lib/utils/textWave";
+	import { toCapitalCase } from "$lib/utils/toCapitalCase";
 	import { tick } from "svelte";
 	// import { dev } from "$app/environment";
 
@@ -169,21 +171,27 @@
 				{#each sortedItems as item (item.id)}
 					{#if item.showType === "section" || item.showType === "block"}
 						{@const isSection = item.showType === "section"}
-						<div class={isSection ? "ind-section" : "ind-block"}>
+						{@const name = item.name?.replaceAll("ㅤ", "")?.trim() || ""}
+						<div class={[isSection ? "ind-section" : "ind-block", !name && "ind-section-block-empty"]}>
 							<span class={isSection ? "ind-section-name" : "ind-block-name"}>
-								{item.name || ""}
+								{name}
 							</span>
 						</div>
 					{:else}
 						{@const state = itemState(item, now)}
 						{@const timeLabel = item.offlineStartAt || (item.predictedStartAt || "").slice(0, 5) || "--:--"}
+						{@const name = item.name?.replaceAll("ㅤ", "")?.trim() || ""}
 
 						<div class="ind-item is-{state}">
 							<div class="ind-item-time">{timeLabel}</div>
 							<div class="ind-item-rail"><div class="ind-item-dot"></div></div>
 							<div class="ind-item-card">
 								<div class="ind-item-name">
-									<span>{item.name || "Без названия"}</span>
+									{#if name.toLowerCase() == "скоро объявим"}
+										<span use:textWave>{toCapitalCase(name)}</span>
+									{:else}
+										<span>{name || "Без названия"}</span>
+									{/if}
 									{#if state === "live"}
 										<span class="ind-badge-live">в эфире</span>
 									{/if}
@@ -290,20 +298,24 @@
 
 	.ind-section,
 	.ind-block {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		margin: 14px 18px 6px;
-		padding-bottom: 6px;
-		border-bottom: 1px dashed currentColor;
-		transition: var(--theme-transition);
+		margin: 0 18px 0 4.25em;
+		padding: 3px;
+		border-bottom: 1px currentColor dashed;
+		border-top: 1px currentColor dashed;
+		border-left: 1px currentColor solid;
 	}
 
 	.ind-section-name,
 	.ind-block-name {
 		font-size: 0.7em;
-		font-weight: 550;
+		font-weight: 650;
 		text-transform: uppercase;
+	}
+
+	.ind-section-block-empty {
+		padding: 0;
+		border: none;
+		border-top: 1px currentColor dashed;
 	}
 
 	.ind-item {
