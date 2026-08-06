@@ -36,7 +36,7 @@
 	let { festId, title = "" }: Props = $props();
 	const scheduleDate = "2026-08-15";
 	const days: DayConfig[] = [{ id: 0, label: "День 1" }];
-	const refreshMs = 5000;
+	const refreshMs = 10000;
 
 	let currentDay = $derived(days[0]?.id ?? 0);
 	let items = $state([] as ScheduleItem[]);
