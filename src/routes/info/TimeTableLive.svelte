@@ -2,7 +2,7 @@
 	import { textWave } from "$lib/utils/textWave";
 	import { toCapitalCase } from "$lib/utils/toCapitalCase";
 	import { tick } from "svelte";
-	// import { dev } from "$app/environment";
+	import { PUBLIC_TIMETABLE_API } from "$env/static/public";
 
 	interface ScheduleItem {
 		id: number;
@@ -37,8 +37,6 @@
 	const scheduleDate = "2026-08-15";
 	const days: DayConfig[] = [{ id: 0, label: "День 1" }];
 	const refreshMs = 5000;
-	// const apiBase = !dev ? "/api/v1/shows" : "https://indiecon-shedule-proxy.artyombkru048.workers.dev/";
-	const apiBase = "https://indiecon-shedule-proxy.artyombkru048.workers.dev/";
 
 	let currentDay = $derived(days[0]?.id ?? 0);
 	let items = $state([] as ScheduleItem[]);
@@ -103,7 +101,9 @@
 
 	async function fetchSchedule(): Promise<void> {
 		try {
-			const res = await fetch(`${apiBase}?festId=${festId}&day=${currentDay}`);
+			const res = await fetch(`${PUBLIC_TIMETABLE_API}?festId=${festId}&day=${currentDay}`, {
+				credentials: "omit",
+			});
 			if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
 			const data: ScheduleItem[] = await res.json();
