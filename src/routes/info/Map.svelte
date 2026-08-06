@@ -8,7 +8,7 @@
 	const maps = [
 		{ src: map_first_floor, name: "Первый этаж" },
 		{ src: map_second_floor, name: "Второй этаж" },
-		{ src: map_game_zone, name: "Игровая зана" },
+		{ src: map_game_zone, name: "Игровая зона" },
 		{ src: map_market, name: "Маркет" },
 	];
 	let selectedMapI = $state(0);

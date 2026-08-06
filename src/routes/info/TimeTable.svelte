@@ -32,7 +32,7 @@
 		{ title: "15:00", desc: "Сумочкин – Ntime" },
 		{ title: "16:00", desc: "NDRecords – Braindead project – Бискас" },
 		{ title: "17:00", desc: "WonderNope – DTV" },
-		{ title: "18:00", desc: "Клайп, sad.pigeon, Grechka, Aliazo, Grechka – ИнкБлот" },
+		{ title: "18:00", desc: "Клайп, sad.pigeon, Grechka – Aliazo – ИнкБлот" },
 		{ time: "Турниры", desc: "Для участия в турнирах нужно заранее подойти на зону и записаться" },
 		{ time: "Зона настолок" },
 		{ title: "13:30", desc: "Повелители Токио" },
