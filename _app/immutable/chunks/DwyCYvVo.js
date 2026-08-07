@@ -1,0 +1,1 @@
+var e=``;function t(t){e=t}function n(t,n){return n??(n=e),[n,...typeof t==`object`?t:[t]].filter(e=>!!e).join(` | `)}export{t as n,n as t};
