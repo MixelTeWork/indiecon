@@ -73,7 +73,6 @@
 
 <style>
 	header {
-		--header-height: calc(90px + var(--safe-area-top));
 		position: sticky;
 		top: 0;
 		z-index: 10;
@@ -134,9 +133,6 @@
 	}
 
 	@media screen and (max-width: 900px) {
-		header {
-			--header-height: calc(80px + var(--safe-area-top));
-		}
 		.logo img {
 			height: 24px;
 		}

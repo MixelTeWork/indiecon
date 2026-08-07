@@ -1,3 +1,11 @@
+<script lang="ts">
+	import { getTitle } from "$lib/utils/getTtile";
+</script>
+
+<svelte:head>
+	<title>{getTitle("Квест")}</title>
+</svelte:head>
+
 <h1 class="h1">Скоро откроется</h1>
 
 <style>

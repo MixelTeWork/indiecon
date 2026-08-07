@@ -2,7 +2,12 @@
 	import Organizers from "./Organizers.svelte";
 	import Contacts from "$lib/components/Contacts.svelte";
 	import logo from "./logo.svg";
+	import { getTitle } from "$lib/utils/getTtile";
 </script>
+
+<svelte:head>
+	<title>{getTitle("О нас")}</title>
+</svelte:head>
 
 <div class="hero h1">
 	<img src={logo} alt="DETERMINATION" />

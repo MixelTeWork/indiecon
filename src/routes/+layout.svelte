@@ -9,10 +9,12 @@
 	import { resolve } from "$app/paths";
 	import { page } from "$app/state";
 	import CookieBanner from "$lib/components/CookieBanner.svelte";
+	import { setTitlePrefix } from "$lib/utils/getTtile";
 
 	let { children } = $props();
 	const url = $derived(new URL(page.url.pathname, PUBLIC_BASE_URL).href);
 	const title = "ИНДИКОН 2.0 ӏ 14+ ӏ 15.08 Москва";
+	setTitlePrefix(title);
 	const site_name = "Индикон";
 	const description =
 		"Любите инди-игры и анимацию? Хотите встретить единомышленников, посмотреть мерч и поучаствовать в активностях? Тогда добро пожаловать на наш фестиваль!";
@@ -63,10 +65,16 @@
 
 <style>
 	.app {
+		--header-height: calc(90px + var(--safe-area-top));
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+
+		@media screen and (width <= 900px) {
+			--header-height: calc(80px + var(--safe-area-top));
+		}
 	}
+
 	main {
 		flex-grow: 1;
 	}

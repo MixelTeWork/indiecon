@@ -1,6 +1,11 @@
 <script>
+	import { getTitle } from "$lib/utils/getTtile";
 	import Tickets from "./Tickets.svelte";
 </script>
+
+<svelte:head>
+	<title>{getTitle("Билеты")}</title>
+</svelte:head>
 
 <h1 class="h1">Виды билетов</h1>
 <h2 class="heading h3">Выбери подходящий</h2>

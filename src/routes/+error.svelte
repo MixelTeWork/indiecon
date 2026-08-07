@@ -2,10 +2,15 @@
 	import { resolve } from "$app/paths";
 	import { page } from "$app/state";
 	import Button from "$lib/components/button/Button.svelte";
+	import { getTitle } from "$lib/utils/getTtile";
 
 	const props: { status?: number } = $props();
 	const status = $derived(props.status ?? page.status);
 </script>
+
+<svelte:head>
+	<title>{getTitle(`${status}`)}</title>
+</svelte:head>
 
 <section>
 	{#if status == 404}
@@ -25,9 +30,11 @@
 		justify-content: center;
 		padding-top: 2rem;
 		gap: 2rem;
+		min-height: calc(100dvh - var(--header-height) - 3em);
 	}
 
 	h1 {
 		text-transform: uppercase;
+		text-align: center;
 	}
 </style>

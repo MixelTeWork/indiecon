@@ -1,6 +1,11 @@
 <script>
+	import { getTitle } from "$lib/utils/getTtile";
 	import FestivalsCarousel from "./FestivalsCarousel.svelte";
 </script>
+
+<svelte:head>
+	<title>{getTitle("Прошедшие фестивали")}</title>
+</svelte:head>
 
 <h1 class="h1">Прошедшие<br />фестивали</h1>
 

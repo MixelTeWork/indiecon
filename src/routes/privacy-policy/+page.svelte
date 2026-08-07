@@ -1,6 +1,11 @@
 <script>
+	import { getTitle } from "$lib/utils/getTtile";
 	import Document from "./text.md";
 </script>
+
+<svelte:head>
+	<title>{getTitle("Политика в отношении обработки персональных данных")}</title>
+</svelte:head>
 
 <div class="markdown">
 	<Document />

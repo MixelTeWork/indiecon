@@ -2,12 +2,17 @@
 	import Carousel from "$lib/components/Carousel.svelte";
 	import Contacts from "$lib/components/Contacts.svelte";
 	import Stripe from "$lib/components/Stripe.svelte";
+	import { getTitle } from "$lib/utils/getTtile";
 	import Map from "./Map.svelte";
 	// import MapSoon from "./MapSoon.svelte";
 	import TimeTable from "./TimeTable.svelte";
 	import TimeTableLive from "./TimeTableLive.svelte";
 	// import TimeTableSoon from "./TimeTableSoon.svelte";
 </script>
+
+<svelte:head>
+	<title>{getTitle("Информация")}</title>
+</svelte:head>
 
 <h1 class="h1">Информация</h1>
 <h2 class="heading h3">Спец-гости</h2>
