@@ -111,6 +111,12 @@ body {
 		display: none !important;
 	}
 }
+.dark .dark-hide {
+	display: none;
+}
+:root:not(.dark) .light-hide {
+	display: none;
+}
 
 img,
 picture,

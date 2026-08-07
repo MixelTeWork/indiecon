@@ -1,9 +1,35 @@
 <script>
 	import { resolve } from "$app/paths";
 	import logo from "$lib/assets/logo.svg";
+	import logo_viviash_light from "$lib/assets/partners/logo_viviash_light.webp";
+	import logo_viviash_dark from "$lib/assets/partners/logo_viviash_dark.webp";
+	import logo_max_extreme_light from "$lib/assets/partners/logo_max_extreme_light.webp";
+	import logo_max_extreme_dark from "$lib/assets/partners/logo_max_extreme_dark.webp";
+	import logo_o2_books_light from "$lib/assets/partners/logo_o2_books_light.webp";
+	import logo_o2_books_dark from "$lib/assets/partners/logo_o2_books_dark.webp";
+	import logo_lb_group_light from "$lib/assets/partners/logo_lb_group_light.webp";
+	import logo_lb_group_dark from "$lib/assets/partners/logo_lb_group_dark.webp";
+	import logo_polka_chudes_light from "$lib/assets/partners/logo_polka_chudes_light.webp";
+	import logo_polka_chudes_dark from "$lib/assets/partners/logo_polka_chudes_dark.webp";
+	import logo_locus_solus_light from "$lib/assets/partners/logo_locus_solus_light.webp";
+	import logo_locus_solus_dark from "$lib/assets/partners/logo_locus_solus_dark.webp";
+	import logo_game4art_light from "$lib/assets/partners/logo_game4art_light.webp";
+	import logo_game4art_dark from "$lib/assets/partners/logo_game4art_dark.webp";
+	import logo_donatov_net_light from "$lib/assets/partners/logo_donatov_net_light.webp";
+	import logo_donatov_net_dark from "$lib/assets/partners/logo_donatov_net_dark.webp";
 
 	const email = "event.determination@gmail.com";
 	// const phone = "";
+	const partners = [
+		{ light: logo_viviash_light, dark: logo_viviash_dark, alt: "VIVIASH", url: "" },
+		{ light: logo_max_extreme_light, dark: logo_max_extreme_dark, alt: "Футболки Макс Экстрим", url: "" },
+		{ light: logo_o2_books_light, dark: logo_o2_books_dark, alt: "О2 young adult книги", url: "" },
+		{ light: logo_lb_group_light, dark: logo_lb_group_dark, alt: "LB Group", url: "" },
+		{ light: logo_polka_chudes_light, dark: logo_polka_chudes_dark, alt: "Полка Чудес", url: "" },
+		{ light: logo_locus_solus_light, dark: logo_locus_solus_dark, alt: "Антикафе Locus Solus", url: "" },
+		{ light: logo_game4art_light, dark: logo_game4art_dark, alt: "Game4Art", url: "" },
+		{ light: logo_donatov_net_light, dark: logo_donatov_net_dark, alt: "Donatov.net", url: "" },
+	];
 </script>
 
 <footer>
@@ -14,7 +40,18 @@
 		<div class="mt">14+</div>
 		<p class="mt sm">ИП Липатов Андрей Дмитриевич<br />ИНН: 972900101036</p>
 		<a class="mt sm" href={resolve("/privacy-policy")}>Политика в отношении обработки персональных данных</a>
+		<h2 class="mt">Партнёры</h2>
+		<div class="partners">
+			{#each partners as partner, i (i)}
+				<!-- <a href={partner.url} target="_blank" rel="external noopener" title={partner.alt}> -->
+					<img class="dark-hide" src={partner.light} alt={partner.alt} />
+					<img class="light-hide" src={partner.dark} alt={partner.alt} />
+				<!-- </a> -->
+			{/each}
+		</div>
 	</div>
+
+	<div class="br"></div>
 
 	<a class="logo" href={resolve("/")}>
 		<img src={logo} alt="Индикон" />
@@ -22,13 +59,36 @@
 </footer>
 
 <style>
+	@custom-media --bp-mobile (width <= 900px);
+
 	footer {
 		padding-inline: clamp(1.25rem, -0.75rem + 8vw, 6.25rem);
 		padding-top: clamp(2.75rem, 1.65rem + 4.4vw, 5.5rem);
 		padding-bottom: clamp(9rem, 10.7rem + -6.8vw, 4.75rem);
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		justify-self: flex-start;
+		align-items: flex-start;
+
+		@media (width <= 380px) {
+			flex-direction: column;
+			align-items: center;
+			gap: 2em;
+		}
+	}
+
+	.br {
+		width: 4rem;
+		border-top: 1px solid currentColor;
+		display: none;
+
+		@media (--bp-mobile) {
+			display: block;
+		}
+	}
+
+	footer > a {
+		flex-shrink: 0;
 	}
 
 	.info {
@@ -36,12 +96,20 @@
 		font-weight: 400;
 		display: flex;
 		flex-direction: column;
+
+		@media (--bp-mobile) {
+			font-size: inherit;
+		}
 	}
 
 	.info h2 {
 		font-weight: 700;
 	}
 
+	.info a {
+		display: inline-block;
+		width: fit-content;
+	}
 	.info a:hover {
 		text-decoration: underline;
 	}
@@ -56,20 +124,37 @@
 
 	.logo img {
 		height: 38px;
-	}
 
-	@media (max-width: 900px) {
-		.info {
-			font-size: inherit;
-		}
-		.logo img {
+		@media (--bp-mobile) {
 			height: 24px;
 		}
 	}
-	@media (max-width: 380px) {
-		footer {
-			flex-direction: column;
-			gap: 2em;
+
+	.partners {
+		margin-top: 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+	.partners > * {
+		transition: transform 150ms ease-in-out;
+	}
+	.partners img {
+		height: 80px;
+		max-width: 200px;
+		width: auto;
+		object-fit: scale-down;
+
+		@media (--bp-mobile) {
+			height: 40px;
+			max-width: 100px;
+		}
+	}
+	@media (pointer: fine) {
+		.partners > *:hover {
+			transform: scale(1.05);
 		}
 	}
 </style>
