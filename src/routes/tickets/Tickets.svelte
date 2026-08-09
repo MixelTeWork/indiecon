@@ -1,5 +1,12 @@
 <script lang="ts">
-	const tickets = [
+	interface ITicket {
+		name: string;
+		price: string;
+		url: string;
+		features: string[];
+		sold?: boolean;
+	}
+	const tickets: ITicket[] = [
 		{
 			name: "Standard edition",
 			price: "2 500 ₽",
@@ -14,6 +21,7 @@
 				"Вход на мероприятие",
 				"Физическая Билет-Открытка + Набор мерча (открытка перевёртыш, стикерпак, значок побольше, плакат) + Ранний вход в 11:00 + Участие в автограф сессиях",
 			],
+			sold: true,
 		},
 		{
 			name: "Ultimate edition",
@@ -26,6 +34,7 @@
 				"Ранний вход",
 				"Участие в автограф сессиях + Вип зона + Вип турниры",
 			],
+			sold: true,
 		},
 		{
 			name: "Спонсор",
@@ -41,6 +50,7 @@
 				"Вип зона",
 				"Вип турниры + Контент для спонсоров на сцене",
 			],
+			sold: true,
 		},
 		{
 			name: "2.0 K",
@@ -62,30 +72,45 @@
 
 <section>
 	{#each tickets as ticket (ticket.name)}
-		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-		<a class="borderedCard ticket" href={ticket.url} target="_blank">
-			<h3 class="ticket__name">{ticket.name}</h3>
-			<ul class="ticket__features">
-				{#each ticket.features as feature, i (i)}
-					{#if feature.includes("+")}
-					{const parts = feature.split("+")}
-						<li>
-						<div>{parts[0]}</div>
-							<ul>
-								{#each parts.slice(1) as part, i (i)}
-									<li>{part}</li>
-								{/each}
-							</ul>
-						</li>
-					{:else}
-						<li>{feature}</li>
-					{/if}
-				{/each}
-			</ul>
-			<div class="ticket__price">{ticket.price}</div>
-		</a>
+		{#if ticket.sold}
+			<div class="borderedCard ticket">
+				{@render Ticket(ticket)}
+			</div>
+		{:else}
+			<a class="borderedCard ticket" href={ticket.url} target="_blank" rel="external">
+				{@render Ticket(ticket)}
+			</a>
+		{/if}
 	{/each}
 </section>
+
+{#snippet Ticket(ticket: ITicket)}
+	<h3 class="ticket__name">{ticket.name}</h3>
+	<ul class="ticket__features">
+		{#each ticket.features as feature, i (i)}
+			{#if feature.includes("+")}
+				{@const parts = feature.split("+")}
+				<li>
+					<div>{parts[0]}</div>
+					<ul>
+						{#each parts.slice(1) as part, i (i)}
+							<li>{part}</li>
+						{/each}
+					</ul>
+				</li>
+			{:else}
+				<li>{feature}</li>
+			{/if}
+		{/each}
+	</ul>
+	<div class="ticket__price">
+		{#if ticket.sold}
+			<span>Закон&shy;чились</span>
+		{:else}
+			{ticket.price}
+		{/if}
+	</div>
+{/snippet}
 
 <style>
 	section {
@@ -137,6 +162,7 @@
 	.ticket__price {
 		grid-area: price;
 		margin-right: clamp(0.0625rem, -1.1125rem + 4.7vw, 3rem);
+		text-align: right;
 	}
 
 	ul {
