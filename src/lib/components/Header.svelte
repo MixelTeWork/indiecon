@@ -16,7 +16,7 @@
 		{ name: "Билеты", href: resolve("/tickets") },
 		{ name: "Прошедшее", href: resolve("/past_festivals") },
 		{ name: "О нас", href: resolve("/about") },
-		{ name: "Квест", href: resolve("/quest") },
+		{ name: "Голосование", href: resolve("/quest") },
 	];
 </script>
 
