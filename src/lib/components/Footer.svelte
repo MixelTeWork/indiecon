@@ -21,14 +21,14 @@
 	const email = "event.determination@gmail.com";
 	// const phone = "";
 	const partners = [
-		{ light: logo_viviash_light, dark: logo_viviash_dark, alt: "VIVIASH", url: "" },
-		{ light: logo_max_extreme_light, dark: logo_max_extreme_dark, alt: "Футболки Макс Экстрим", url: "" },
-		{ light: logo_o2_books_light, dark: logo_o2_books_dark, alt: "О2 young adult книги", url: "" },
-		{ light: logo_lb_group_light, dark: logo_lb_group_dark, alt: "LB Group", url: "" },
-		{ light: logo_polka_chudes_light, dark: logo_polka_chudes_dark, alt: "Полка Чудес", url: "" },
-		{ light: logo_locus_solus_light, dark: logo_locus_solus_dark, alt: "Антикафе Locus Solus", url: "" },
-		{ light: logo_game4art_light, dark: logo_game4art_dark, alt: "Game4Art", url: "" },
-		{ light: logo_donatov_net_light, dark: logo_donatov_net_dark, alt: "Donatov.net", url: "" },
+		{ light: logo_viviash_light, dark: logo_viviash_dark, alt: "VIVIASH", url: "https://viviash.com/" },
+		{ light: logo_max_extreme_light, dark: logo_max_extreme_dark, alt: "Футболки Макс Экстрим", url: "https://max-extreme.ru/" },
+		{ light: logo_o2_books_light, dark: logo_o2_books_dark, alt: "О2 young adult книги", url: "https://o2books.ru/" },
+		{ light: logo_lb_group_light, dark: logo_lb_group_dark, alt: "LB Group", url: "https://lb.group/" },
+		{ light: logo_polka_chudes_light, dark: logo_polka_chudes_dark, alt: "Полка Чудес", url: "https://polkachudes.ru/" },
+		{ light: logo_locus_solus_light, dark: logo_locus_solus_dark, alt: "Антикафе Locus Solus", url: "https://vk.ru/locus_solus" },
+		{ light: logo_game4art_light, dark: logo_game4art_dark, alt: "Game4Art", url: "https://game4art.ru/" },
+		{ light: logo_donatov_net_light, dark: logo_donatov_net_dark, alt: "Donatov.net", url: "https://donatov.net/" },
 	];
 </script>
 
@@ -43,10 +43,10 @@
 		<h2 class="mt">Партнёры</h2>
 		<div class="partners">
 			{#each partners as partner, i (i)}
-				<!-- <a href={partner.url} target="_blank" rel="external noopener" title={partner.alt}> -->
+				<a href={partner.url} target="_blank" rel="external noopener" title={partner.alt}>
 					<img class="dark-hide" src={partner.light} alt={partner.alt} />
 					<img class="light-hide" src={partner.dark} alt={partner.alt} />
-				<!-- </a> -->
+				</a>
 			{/each}
 		</div>
 	</div>
