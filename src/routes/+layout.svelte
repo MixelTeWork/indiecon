@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { QueryClient, QueryClientProvider } from "@tanstack/svelte-query";
 	import { PUBLIC_BASE_URL } from "$env/static/public";
 	import favicon from "$lib/assets/favicon.svg";
 	import og_image from "$lib/assets/og_image.jpg";
@@ -11,7 +12,7 @@
 	import CookieBanner from "$lib/components/CookieBanner.svelte";
 	import { setTitlePrefix } from "$lib/utils/getTtile";
 
-	let { children } = $props();
+	const { children } = $props();
 	const url = $derived(new URL(page.url.pathname, PUBLIC_BASE_URL).href);
 	const title = "ИНДИКОН 2.0 ӏ 14+ ӏ 15.08 Москва";
 	setTitlePrefix(title);
@@ -21,9 +22,18 @@
 	const imgWidth = "1200";
 	const imgHeight = "630";
 	const img = $derived(new URL(og_image, PUBLIC_BASE_URL).href);
+
+	const queryClient = new QueryClient({
+		defaultOptions: { queries: { staleTime: Infinity, gcTime: Infinity, retry: 2, retryDelay: 1000 } },
+	});
 </script>
 
 <svelte:head>
+	{#if page.route.id == "/quest"}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+	{:else}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	{/if}
 	<link rel="icon" href={favicon} />
 	<title>{title}</title>
 	<meta name="description" content={description} />
@@ -51,15 +61,17 @@
 	<meta name="twitter:image" content={img} />
 </svelte:head>
 
-<div class="app">
-	<Header />
+<QueryClientProvider client={queryClient}>
+	<div class="app">
+		<Header />
 
-	<main>
-		{@render children()}
-	</main>
+		<main>
+			{@render children()}
+		</main>
 
-	<Footer />
-</div>
+		<Footer />
+	</div>
+</QueryClientProvider>
 
 <CookieBanner />
 
