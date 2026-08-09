@@ -1,1 +1,0 @@
-import{E as e,I as t,V as n,h as r,nt as i,tt as a,w as o}from"../chunks/XohEH9Jp.js";import"../chunks/B8UK1oE5.js";import{t as s}from"../chunks/DwyCYvVo.js";var c=e(`<h1 class="h1 svelte-97z5rd">Скоро откроется</h1>`);function l(e,l){i(l,!0);var u=c();r(`97z5rd`,e=>{t(e=>{n.title=e??``},[()=>s(`Квест`)])}),o(e,u),a()}export{l as component};
