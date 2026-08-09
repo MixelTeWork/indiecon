@@ -1,1 +1,0 @@
-var e=`https://indiecon-fest.ru/`,t=`https://app.indiecon-fest.ru/live-timetable-api`,n=`https://app.indiecon-fest.ru/`;export{e as n,t as r,n as t};
