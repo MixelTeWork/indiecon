@@ -17,6 +17,12 @@
 	import logo_game4art_dark from "$lib/assets/partners/logo_game4art_dark.webp";
 	import logo_donatov_net_light from "$lib/assets/partners/logo_donatov_net_light.webp";
 	import logo_donatov_net_dark from "$lib/assets/partners/logo_donatov_net_dark.webp";
+	import logo_shiba_light from "$lib/assets/partners/logo_shiba_light.webp";
+	import logo_shiba_dark from "$lib/assets/partners/logo_shiba_dark.webp";
+	import logo_festq_light from "$lib/assets/partners/logo_festq_light.webp";
+	import logo_festq_dark from "$lib/assets/partners/logo_festq_dark.webp";
+	import logo_rusanimefest_light from "$lib/assets/partners/logo_rusanimefest_light.webp";
+	import logo_rusanimefest_dark from "$lib/assets/partners/logo_rusanimefest_dark.webp";
 
 	const email = "event.determination@gmail.com";
 	// const phone = "";
@@ -29,6 +35,9 @@
 		{ light: logo_locus_solus_light, dark: logo_locus_solus_dark, alt: "Антикафе Locus Solus", url: "https://vk.ru/locus_solus" },
 		{ light: logo_game4art_light, dark: logo_game4art_dark, alt: "Game4Art", url: "https://game4art.ru/" },
 		{ light: logo_donatov_net_light, dark: logo_donatov_net_dark, alt: "Donatov.net", url: "https://donatov.net/" },
+		{ light: logo_shiba_light, dark: logo_shiba_dark, alt: "Shiba", url: "https://shiba-store.ru/" },
+		{ light: logo_festq_light, dark: logo_festq_dark, alt: "Festq", url: "https://festq.ru/" },
+		{ light: logo_rusanimefest_light, dark: logo_rusanimefest_dark, alt: "RusAnimeFest", url: "https://rusanimefest.ru/" },
 	];
 </script>
 
