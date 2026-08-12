@@ -91,7 +91,7 @@
 		border-top: 1px solid currentColor;
 		display: none;
 
-		@media (--bp-mobile) {
+		@media (width <= 380px) {
 			display: block;
 		}
 	}
