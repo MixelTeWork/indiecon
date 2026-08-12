@@ -53,15 +53,7 @@
 		if (!hms) return null;
 		const dateParts = scheduleDate.split("-").map(Number);
 		const timeParts = hms.split(":").map(Number);
-		return new Date(
-			dateParts[0],
-			dateParts[1] - 1,
-			dateParts[2],
-			timeParts[0] || 0,
-			timeParts[1] || 0,
-			timeParts[2] || 0,
-			0,
-		);
+		return new Date(dateParts[0], dateParts[1] - 1, dateParts[2], timeParts[0] || 0, timeParts[1] || 0, timeParts[2] || 0, 0);
 	}
 
 	function itemTiming(item: ScheduleItem): { start: Date; end: Date } | null {
@@ -151,11 +143,7 @@
 		{#if days.length > 1}
 			<div class="ind-days">
 				{#each days as d (d.id)}
-					<button
-						type="button"
-						class="ind-day-btn {d.id === currentDay ? 'active' : ''}"
-						onclick={() => (currentDay = d.id)}
-					>
+					<button type="button" class="ind-day-btn {d.id === currentDay ? 'active' : ''}" onclick={() => (currentDay = d.id)}>
 						{d.label}
 					</button>
 				{/each}
@@ -212,6 +200,8 @@
 </section>
 
 <style>
+	@custom-media --bp-small (width <= 420px);
+
 	section {
 		padding: 0 1em;
 	}
@@ -303,6 +293,10 @@
 		border-bottom: 1px currentColor dashed;
 		border-top: 1px currentColor dashed;
 		border-left: 1px currentColor solid;
+
+		@media (--bp-small) {
+			margin-left: 3.5em;
+		}
 	}
 
 	.ind-section-name,
@@ -324,6 +318,10 @@
 		gap: 0;
 		padding: 9px 18px 9px 0;
 		position: relative;
+
+		@media (--bp-small) {
+			grid-template-columns: 3.5em 3px 1fr;
+		}
 	}
 
 	.ind-item-time {
@@ -461,11 +459,5 @@
 		color: var(--c-live-fg);
 		margin-left: 0.75em;
 		transition: var(--theme-transition);
-	}
-
-	@media (max-width: 420px) {
-		.ind-item {
-			grid-template-columns: 3.5em 3px 1fr;
-		}
 	}
 </style>
