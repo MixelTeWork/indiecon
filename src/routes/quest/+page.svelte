@@ -8,7 +8,6 @@
 	import Auth from "./Auth.svelte";
 	import { useGameState } from "$lib/api/game";
 	import { useTourneyCharacters } from "$lib/api/tourney";
-	import { browser } from "$app/environment";
 
 	useTourneyCharacters(); // preload
 	const user = useUser();
@@ -16,7 +15,11 @@
 	const ticketLoginEnabled = useTicketLoginEnabled();
 	const logout = useMutationLogout();
 
-	let DEV_isGameTestEnabled = $state(browser && localStorage.getItem("DEV_isGameTestEnabled") == "1");
+	// eslint-disable-next-line svelte/prefer-writable-derived
+	let DEV_isGameTestEnabled = $state(false);
+	$effect(() => {
+		DEV_isGameTestEnabled = localStorage.getItem("DEV_isGameTestEnabled") == "1";
+	})
 
 	let isintroVisible = $state(true);
 	// let isintroVisible = $state(false);
