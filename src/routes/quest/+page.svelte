@@ -15,11 +15,11 @@
 	const ticketLoginEnabled = useTicketLoginEnabled();
 	const logout = useMutationLogout();
 
-	// eslint-disable-next-line svelte/prefer-writable-derived
-	let DEV_isGameTestEnabled = $state(false);
-	$effect(() => {
-		DEV_isGameTestEnabled = localStorage.getItem("DEV_isGameTestEnabled") == "1";
-	})
+	// // eslint-disable-next-line svelte/prefer-writable-derived
+	// let DEV_isGameTestEnabled = $state(false);
+	// $effect(() => {
+	// 	DEV_isGameTestEnabled = localStorage.getItem("DEV_isGameTestEnabled") == "1";
+	// });
 
 	let isintroVisible = $state(true);
 	// let isintroVisible = $state(false);
@@ -71,7 +71,8 @@
 		{/if}
 		<div class="introBox" transition:fade>
 			<h1>Голосование</h1>
-			{#if DEV_isGameTestEnabled && (ticketLoginEnabled.isLoading || ticketLoginEnabled.data?.value)}
+			<!-- {#if DEV_isGameTestEnabled && (ticketLoginEnabled.isLoading || ticketLoginEnabled.data?.value)} -->
+			{#if ticketLoginEnabled.isLoading || ticketLoginEnabled.data?.value}
 				<button class="playBtn" onclick={start}>
 					{#if ticketLoginEnabled.isLoading}
 						{@render loadingIcon()}
@@ -80,7 +81,8 @@
 					{/if}
 					<div class={["playBtnCircle", isStartCircleExpanded && "playBtnCircle_expanded"]}></div>
 				</button>
-			{:else if DEV_isGameTestEnabled && ticketLoginEnabled.error}
+				<!-- {:else if DEV_isGameTestEnabled && ticketLoginEnabled.error} -->
+			{:else if ticketLoginEnabled.error}
 				<p style:color="tomato">Произошла ошибка :(</p>
 			{:else}
 				<p>Время ещё не пришло</p>
@@ -103,13 +105,13 @@
 		<Game />
 	{/if}
 
-	<input
+	<!-- <input
 		class={["dev_hiddenTogle", DEV_isGameTestEnabled && "dev_hiddenTogle_enabled"]}
 		type="text"
 		oninput={(e) => {
 			const target = e.currentTarget as HTMLInputElement;
 			const v = target.value.toLowerCase().trim();
-			if (v == "тыква"){
+			if (v == "тыква") {
 				const wasEnabled = localStorage.getItem("DEV_isGameTestEnabled") == "1";
 				const enabled = !wasEnabled;
 				localStorage.setItem("DEV_isGameTestEnabled", enabled ? "1" : "0");
@@ -117,7 +119,7 @@
 				target.value = "";
 			}
 		}}
-	/>
+	/> -->
 </section>
 
 {#snippet playIcon()}
@@ -269,7 +271,7 @@
 		transition-timing-function: cubic-bezier(1, -2.14, 0.93, 0.47);
 	}
 
-	.dev_hiddenTogle {
+	/* .dev_hiddenTogle {
 		position: absolute;
 		background-color: transparent;
 		border-radius: 0.25em;
@@ -280,5 +282,5 @@
 	}
 	.dev_hiddenTogle_enabled {
 		border: 1px solid red;
-	}
+	} */
 </style>

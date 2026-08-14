@@ -79,7 +79,7 @@
 		justify-self: flex-start;
 		align-items: flex-start;
 
-		@media (width <= 380px) {
+		@media (--bp-mobile) {
 			flex-direction: column;
 			align-items: center;
 			gap: 2em;
@@ -91,7 +91,7 @@
 		border-top: 1px solid currentColor;
 		display: none;
 
-		@media (width <= 380px) {
+		@media (--bp-mobile) {
 			display: block;
 		}
 	}
