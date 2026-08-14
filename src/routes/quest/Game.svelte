@@ -135,10 +135,10 @@
 			<Spinner />
 		{:else}
 			<div class="teamSelect">
-				<button onclick={() => selectTeam.mutate(1)} disabled={selectTeam.isPending || selectTeam.isSuccess}>
+				<button onclick={() => selectTeam.mutate(1)} disabled={selectTeam.isPending}>
 					{@render Character(characterLeft)}
 				</button>
-				<button onclick={() => selectTeam.mutate(2)} disabled={selectTeam.isPending || selectTeam.isSuccess}>
+				<button onclick={() => selectTeam.mutate(2)} disabled={selectTeam.isPending}>
 					{@render Character(characterRight)}
 				</button>
 			</div>
@@ -154,7 +154,7 @@
 	<button
 		class="clickBtn"
 		style:--_c={characterTeam?.color}
-		onclick={(e) => {
+		onpointerdown={(e) => {
 			e.preventDefault();
 			clicks += 1;
 			if (!clickBtnAnim) return;
