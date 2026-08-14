@@ -71,7 +71,7 @@
 		{/if}
 		<div class="introBox" transition:fade>
 			<h1>Голосование</h1>
-			{#if (DEV_isGameTestEnabled && ticketLoginEnabled.isLoading) || ticketLoginEnabled.data?.value}
+			{#if DEV_isGameTestEnabled && (ticketLoginEnabled.isLoading || ticketLoginEnabled.data?.value)}
 				<button class="playBtn" onclick={start}>
 					{#if ticketLoginEnabled.isLoading}
 						{@render loadingIcon()}
