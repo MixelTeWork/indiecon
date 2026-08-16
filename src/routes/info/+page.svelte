@@ -8,6 +8,8 @@
 	import TimeTable from "./TimeTable.svelte";
 	import TimeTableLive from "./TimeTableLive.svelte";
 	// import TimeTableSoon from "./TimeTableSoon.svelte";
+	import mock_timetable_1 from "./mock_timetable_1.json";
+	import mock_timetable_2 from "./mock_timetable_2.json";
 </script>
 
 <svelte:head>
@@ -31,8 +33,8 @@
 	</div>
 </div>
 
-<TimeTableLive festId={106} title="Главная сцена" />
-<TimeTableLive festId={111} title="Малая Сцена" />
+<TimeTableLive festId={106} title="Главная сцена" mock={[{ id: 0, label: "День 1", items: mock_timetable_1 }]} />
+<TimeTableLive festId={111} title="Малая Сцена" mock={[{ id: 0, label: "День 1", items: mock_timetable_2 }]} />
 <TimeTable />
 <!-- <TimeTableSoon /> -->
 

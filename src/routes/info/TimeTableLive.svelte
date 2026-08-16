@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { textWave } from "$lib/utils/textWave";
 	import { toCapitalCase } from "$lib/utils/toCapitalCase";
-	import { tick } from "svelte";
+	import { tick, untrack } from "svelte";
 	import { PUBLIC_TIMETABLE_API } from "$env/static/public";
 	import { numNoun } from "$lib/utils/numNoun";
 	import { SvelteSet } from "svelte/reactivity";
@@ -10,7 +10,7 @@
 		id: number;
 		pos: number;
 		indexId: number | null;
-		requestId: number | null;
+		requestId: string | null;
 		showType: "show" | "block" | "section" | string;
 		nomination: string | null;
 		name: string | null;
@@ -46,14 +46,21 @@
 		label: string;
 	}
 
+	interface DaysMock {
+		id: number;
+		label: string;
+		items: ScheduleApiItem[];
+	}
+
 	interface Props {
 		festId: number;
 		title?: string;
+		mock?: DaysMock[];
 	}
 
-	let { festId, title = "" }: Props = $props();
+	let { festId, title = "", mock }: Props = $props();
 	const scheduleDate = "2026-08-15";
-	const days: DayConfig[] = [{ id: 0, label: "День 1" }];
+	const days: DayConfig[] = $derived(mock ?? [{ id: 0, label: "День 1" }]);
 	const refreshMs = 10000;
 
 	let currentDay = $derived(days[0]?.id ?? 0);
@@ -111,12 +118,17 @@
 
 	async function fetchSchedule(): Promise<void> {
 		try {
-			const res = await fetch(`${PUBLIC_TIMETABLE_API}?festId=${festId}&day=${currentDay}`, {
-				credentials: "omit",
-			});
-			if (!res.ok) throw new Error(`HTTP ${res.status}`);
+			let data: ScheduleApiItem[];
+			if (mock) {
+				data = mock.find((v) => v.id == currentDay)?.items || [];
+			} else {
+				const res = await fetch(`${PUBLIC_TIMETABLE_API}?festId=${festId}&day=${currentDay}`, {
+					credentials: "omit",
+				});
+				if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-			const data: ScheduleApiItem[] = await res.json();
+				data = await res.json();
+			}
 			const newItems: ScheduleItem[] = data
 				.map(
 					(item) =>
@@ -221,7 +233,7 @@
 		statusText = "Загружаю программу…";
 		isError = false;
 
-		fetchSchedule();
+		untrack(() => fetchSchedule());
 
 		const intervalId = setInterval(fetchSchedule, refreshMs);
 
